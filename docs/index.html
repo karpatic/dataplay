@@ -49,7 +49,7 @@ description: "The one stop shop to learn about data intake, processing, and visu
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">test</span><span class="o">-</span><span class="n">template</span> <span class="n">geopandas</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">dataplay</span> <span class="n">geopandas</span>
 </pre></div>
 
     </div>
@@ -74,7 +74,7 @@ description: "The one stop shop to learn about data intake, processing, and visu
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Import the installed module into your code and use like so:</p>
 
-<pre><code>from test_template.acsDownload import retrieve_acs_data 
+<pre><code>from dataplay.acsDownload import retrieve_acs_data 
 retrieve_acs_data(state, county, tract, tableId, year, saveAcs)</code></pre>
 
 </div>
@@ -92,10 +92,25 @@ retrieve_acs_data(state, county, tract, tableId, year, saveAcs)</code></pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">test_template.acsDownload</span> <span class="k">import</span> <span class="n">retrieve_acs_data</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">dataplay.acsDownload</span> <span class="k">import</span> <span class="n">retrieve_acs_data</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/usr/local/lib/python3.6/dist-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use &#34;pip install psycopg2-binary&#34; instead. For details see: &lt;http://initd.org/psycopg/docs/install.html#binary-install-from-pypi&gt;.
+  &#34;&#34;&#34;)
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 

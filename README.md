@@ -9,7 +9,7 @@ This homepage will show you just some of the things you can do with data.
 The code is on <a href="https://pypi.org/project/test-template/">PyPI</a> so you can just run:
 
 ```
-pip install test-template geopandas
+pip install dataplay geopandas
 ```
 
 From the terminal to install the code and its dependencies
@@ -18,14 +18,14 @@ From the terminal to install the code and its dependencies
 
 Import the installed module into your code and use like so:
 ``` 
-from test_template.acsDownload import retrieve_acs_data 
+from dataplay.acsDownload import retrieve_acs_data 
 retrieve_acs_data(state, county, tract, tableId, year, saveAcs)
 ```
 
 Heres an example:
 
 ```
-from test_template.acsDownload import retrieve_acs_data
+from dataplay.acsDownload import retrieve_acs_data
 ```
 
 ```

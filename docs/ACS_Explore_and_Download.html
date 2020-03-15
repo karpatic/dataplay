@@ -55,8 +55,6 @@ description: "In this tutorial, the basics of Colabs are introduced and ACS data
 </li>
 <li><p>This notebook has been optimized for Google Colabs ran on a Chrome Browser.</p>
 </li>
-<li><p>By</p>
-</li>
 </ul>
 
 </div>
@@ -250,51 +248,9 @@ description: "In this tutorial, the basics of Colabs are introduced and ACS data
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#@title Run: Census Granularities</span>
-
-<span class="o">%%</span><span class="k">html</span>
-&lt;script src=&quot;https://code.jquery.com/jquery-1.10.2.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js&quot;&gt; &lt;/script&gt;
-&lt;script&gt; window.mermaid.init() &lt;/script&gt;
-&lt;div class=&quot;mermaid&quot;&gt;
-  graph LR
-      Census_Block --create--&gt; block_group
-      block_group --&gt; tract_level
-      tract_level --&gt; csa_level
-      csa_level --&gt; jurisdiction_level 
-      jurisdiction_level --&gt; state_level
-      state_level
-&lt;/div&gt;
-  
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea ">
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-<script src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"> </script>
-<script> window.mermaid.init() </script>
-<div class="mermaid">
-  graph LR
-      Census_Block --create--> block_group
-      block_group --> tract_level
-      tract_level --> csa_level
-      csa_level --> jurisdiction_level 
-      jurisdiction_level --> state_level
-      state_level
-</div>
-  
-</div>
-
-</div>
-
 </div>
 </div>
 

@@ -121,72 +121,9 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#@title Run This Cell: View User Path (html)</span>
-
-<span class="c1"># This box uses HTML magic &#39;%%html&#39; to denote </span>
-<span class="c1"># that anything after that tag will be in HTML not Python.</span>
-<span class="c1"># Within the HTML I use Javascript magic to render </span>
-<span class="c1"># a graph from the markup written inside the html div</span>
-<span class="c1"># The graph maps out the possible paths </span>
-<span class="c1"># you may take when using this notebook.</span>
-
-<span class="o">%%</span><span class="k">html</span>
-&lt;script src=&quot;https://code.jquery.com/jquery-1.10.2.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js&quot;&gt; &lt;/script&gt;
-&lt;script&gt; window.mermaid.init() &lt;/script&gt;
-&lt;h1&gt; User Path &lt;/h1&gt;
-&lt;div class=&quot;mermaid&quot;&gt;
-  graph LR
-      User&gt;User] --&gt; ExploreAcsTables
-      ExploreAcsTables --&gt; DownloadAcsTable
-      DownloadAcsTable -- Repeat --&gt; DownloadAcsTable
-      DownloadAcsTable --&gt; DecideWhatToDo{DecideWhatToDo}
-      DecideWhatToDo --&gt; RunAnotherNotebook{RunAnotherNotebook} 
-      DecideWhatToDo --&gt; FinishTheNotebook
-      RunAnotherNotebook --&gt; MergeDatasets
-      RunAnotherNotebook --&gt; ExploreDataset
-      RunAnotherNotebook --&gt; QueryDataset
-      FinishTheNotebook --&gt; RetrieveCrosswalk
-      RetrieveCrosswalk --&gt; MergeCrosswalkToDatatable
-      MergeCrosswalkToDatatable --&gt; RunMedianHouseholdIndicator
-&lt;/div&gt;
-  
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea ">
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-<script src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"> </script>
-<script> window.mermaid.init() </script>
-<h1> User Path </h1>
-<div class="mermaid">
-  graph LR
-      User>User] --> ExploreAcsTables
-      ExploreAcsTables --> DownloadAcsTable
-      DownloadAcsTable -- Repeat --> DownloadAcsTable
-      DownloadAcsTable --> DecideWhatToDo{DecideWhatToDo}
-      DecideWhatToDo --> RunAnotherNotebook{RunAnotherNotebook} 
-      DecideWhatToDo --> FinishTheNotebook
-      RunAnotherNotebook --> MergeDatasets
-      RunAnotherNotebook --> ExploreDataset
-      RunAnotherNotebook --> QueryDataset
-      FinishTheNotebook --> RetrieveCrosswalk
-      RetrieveCrosswalk --> MergeCrosswalkToDatatable
-      MergeCrosswalkToDatatable --> RunMedianHouseholdIndicator
-</div>
-  
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -220,14 +157,14 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 <span class="c1"># Once installed we need to import and configure the Widgets</span>
 <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
 <span class="o">!</span>jupyter nbextension <span class="nb">enable</span> --py widgetsnbextension
-<span class="kn">from</span> <span class="nn">IPython.core.interactiveshell</span> <span class="k">import</span> <span class="n">InteractiveShell</span>
+<span class="kn">from</span> <span class="nn">IPython.core.interactiveshell</span> <span class="kn">import</span> <span class="n">InteractiveShell</span>
 <span class="n">InteractiveShell</span><span class="o">.</span><span class="n">ast_node_interactivity</span> <span class="o">=</span> <span class="s1">&#39;all&#39;</span>
 <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
-<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="k">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interact_manual</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interact_manual</span>
 
 <span class="c1"># Used 4 Importing Data</span>
 <span class="kn">import</span> <span class="nn">urllib.request</span> <span class="k">as</span> <span class="nn">urllib</span> 
-<span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="k">import</span> <span class="n">urlencode</span> 
+<span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">urlencode</span> 
 <span class="c1"># This Prevents Timeouts when Importing</span>
 <span class="kn">import</span> <span class="nn">socket</span> 
 <span class="n">socket</span><span class="o">.</span><span class="n">setdefaulttimeout</span><span class="p">(</span><span class="mf">10.0</span><span class="p">)</span>
@@ -241,7 +178,7 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 <span class="c1"># 4 Data Processing</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="c1"># 4 Reading Json Data into Pandas</span>
-<span class="kn">from</span> <span class="nn">pandas.io.json</span> <span class="k">import</span> <span class="n">json_normalize</span>
+<span class="kn">from</span> <span class="nn">pandas.io.json</span> <span class="kn">import</span> <span class="n">json_normalize</span>
 
 <span class="c1"># 4 exporting data as CSV</span>
 <span class="kn">import</span> <span class="nn">csv</span>
@@ -250,10 +187,10 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 <span class="c1"># Geo-Formatting</span>
 <span class="c1"># Postgres-Conversion</span>
 <span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
-<span class="kn">from</span> <span class="nn">geopandas</span> <span class="k">import</span> <span class="n">GeoDataFrame</span>
+<span class="kn">from</span> <span class="nn">geopandas</span> <span class="kn">import</span> <span class="n">GeoDataFrame</span>
 <span class="kn">import</span> <span class="nn">psycopg2</span><span class="o">,</span><span class="nn">pandas</span><span class="o">,</span><span class="nn">numpy</span>
-<span class="kn">from</span> <span class="nn">shapely</span> <span class="k">import</span> <span class="n">wkb</span>
-<span class="kn">from</span> <span class="nn">shapely.wkt</span> <span class="k">import</span> <span class="n">loads</span>
+<span class="kn">from</span> <span class="nn">shapely</span> <span class="kn">import</span> <span class="n">wkb</span>
+<span class="kn">from</span> <span class="nn">shapely.wkt</span> <span class="kn">import</span> <span class="n">loads</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 
@@ -366,7 +303,7 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 
 <span class="kn">import</span> <span class="nn">json</span> 
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
-<span class="kn">from</span> <span class="nn">pandas.io.json</span> <span class="k">import</span> <span class="n">json_normalize</span>
+<span class="kn">from</span> <span class="nn">pandas.io.json</span> <span class="kn">import</span> <span class="n">json_normalize</span>
 
 <span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_columns&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
 <span class="c1">#--------------------</span>
@@ -375,7 +312,7 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 <span class="c1">#--------------------</span>
 <span class="n">tableId</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please enter a Table ID to inspect: &quot;</span><span class="p">)</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;https://api.census.gov/data/2017/acs/acs5/groups/</span><span class="si">{tableId}</span><span class="s1">.json&#39;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;https://api.census.gov/data/2017/acs/acs5/groups/</span><span class="si">{</span><span class="n">tableId</span><span class="si">}</span><span class="s1">.json&#39;</span>
 <span class="n">metaDataTable</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 
 <span class="n">metaDataTable</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">drop</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> 
@@ -1564,84 +1501,9 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#@title Run This Cell: createIndicator() Diagram</span>
-<span class="o">%%</span><span class="k">html</span>
-&lt;script src=&quot;https://code.jquery.com/jquery-1.10.2.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js&quot;&gt; &lt;/script&gt;
-&lt;script&gt; window.mermaid.init() &lt;/script&gt;
-
-&lt;h1&gt; createIndicator() Variables and Methods &lt;/h1&gt;
-&lt;div class=&quot;mermaid&quot; style=&#39;width:400px&#39;&gt;
-  classDiagram
-    CreateIndicator --* CreateIndicator
-    CreateIndicator : bool saveAcs
-    CreateIndicator : bool saveCrosswalked
-    CreateIndicator : main( )
-    CreateIndicator : crosswalkIt( )
-    CreateIndicator : method( )
-    CreateIndicator : text state
-    CreateIndicator : text county
-    CreateIndicator : text year
-    CreateIndicator : text tableId
-    CreateIndicator : text cwUrl
-    CreateIndicator : text local_match_col
-    CreateIndicator : text foreign_match_col
-    CreateIndicator : text foreign_wanted_col
-    CreateIndicator : text aggMethod
-    CreateIndicator : text method
-    CreateIndicator : text CrosswalkedFileName
-    CreateIndicator : text finalFileName
-    CreateIndicator : col groupBy
-    CreateIndicator : col boundaryGeomName
-    CreateIndicator : array columnsToInclude
-    CreateIndicator : array year
-&lt;/div&gt;
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea ">
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-<script src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"> </script>
-<script> window.mermaid.init() </script>
-
-<h1> createIndicator() Variables and Methods </h1>
-<div class="mermaid" style='width:400px'>
-  classDiagram
-    CreateIndicator --* CreateIndicator
-    CreateIndicator : bool saveAcs
-    CreateIndicator : bool saveCrosswalked
-    CreateIndicator : main( )
-    CreateIndicator : crosswalkIt( )
-    CreateIndicator : method( )
-    CreateIndicator : text state
-    CreateIndicator : text county
-    CreateIndicator : text year
-    CreateIndicator : text tableId
-    CreateIndicator : text cwUrl
-    CreateIndicator : text local_match_col
-    CreateIndicator : text foreign_match_col
-    CreateIndicator : text foreign_wanted_col
-    CreateIndicator : text aggMethod
-    CreateIndicator : text method
-    CreateIndicator : text CrosswalkedFileName
-    CreateIndicator : text finalFileName
-    CreateIndicator : col groupBy
-    CreateIndicator : col boundaryGeomName
-    CreateIndicator : array columnsToInclude
-    CreateIndicator : array year
-</div>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -4539,7 +4401,7 @@ dtype: object</pre>
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#https://colab.research.google.com/github/jakevdp/PythonDataScienceHandbook/blob/master/notebooks/01.05-IPython-And-Shell-Commands.ipynb</span>
 
-<span class="kn">from</span> <span class="nn">google.colab</span> <span class="k">import</span> <span class="n">drive</span>
+<span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
 <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s2">&quot;/content/drive&quot;</span><span class="p">)</span>
 </pre></div>
 
@@ -4561,7 +4423,7 @@ dtype: object</pre>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Import Data (data.csv file)</span>
-<span class="kn">from</span> <span class="nn">google.colab</span> <span class="k">import</span> <span class="n">files</span>
+<span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">files</span>
 
 <span class="c1"># Just uncommment this line and run the cell</span>
 <span class="c1"># uploaded = files.upload()</span>

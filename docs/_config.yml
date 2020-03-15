@@ -1,7 +1,7 @@
-repository: karpatic/test_template
+repository: karpatic/dataplay
 output: web
-topnav_title: test_template
-site_title: test_template
+topnav_title: dataplay
+site_title: dataplay
 company_name: Your Name or Company Name
 description: A description of your project
 # Set to false to disable KaTeX math

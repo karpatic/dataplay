@@ -25,6 +25,6 @@ entries:
       title: 'From ACS Download to Gif '
       url: /ACS_From_Download_To_Gif
     output: web
-    title: test_template
+    title: dataplay
   output: web
   title: Sidebar

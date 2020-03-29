@@ -55,19 +55,17 @@ description: "This notebook was made to demonstrate how to merge datasets by mat
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Before-we-begin">Before we begin<a class="anchor-link" href="#Before-we-begin"> </a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Whats-Inside?">Whats Inside?<a class="anchor-link" href="#Whats-Inside?"> </a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="The-Tutorial"><strong>The Tutorial</strong><a class="anchor-link" href="#The-Tutorial"> </a></h4><p>This notebook was made to demonstrate how to merge datasets by matching a single columns values from two datasets.</p>
+<h4 id="The-Tutorial"><strong>The Tutorial</strong><a class="anchor-link" href="#The-Tutorial"> </a></h4><p>In this notebook, the basics of how to perform a merge is introduced</p>
+<ul>
+<li>We will merge two datasets</li>
+<li>We will merge two datasets using a crosswalk</li>
+</ul>
 
 </div>
 </div>
@@ -153,7 +151,7 @@ import pandas as pd
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># (Optional) Run this cell to gain access to Google Drive (Colabs only) </span>
-<span class="kn">from</span> <span class="nn">google.colab</span> <span class="k">import</span> <span class="n">drive</span>
+<span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
 
 <span class="c1"># Colabs operates in a virtualized enviornment</span>
 <span class="c1"># Colabs default directory is at ~/content.</span>
@@ -485,6 +483,34 @@ import imageio
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">dataplay.acsDownload</span> <span class="kn">import</span> <span class="n">retrieve_acs_data</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/usr/local/lib/python3.6/dist-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use &#34;pip install psycopg2-binary&#34; instead. For details see: &lt;http://initd.org/psycopg/docs/install.html#binary-install-from-pypi&gt;.
+  &#34;&#34;&#34;)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -859,9 +885,9 @@ https://docs.google.com/spreadsheets/d/e/2PACX-1vREwwa_s8Ix39OYGnnS_wA8flOoEkU7r
 <span class="c1"># Full - Returns all records regardless of keys matching</span>
 <span class="c1"># Inner - Returns only records where a key match</span>
 
-<span class="kn">from</span> <span class="nn">PIL</span> <span class="k">import</span> <span class="n">Image</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
 <span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">from</span> <span class="nn">io</span> <span class="k">import</span> <span class="n">BytesIO</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://docs.trifacta.com/download/attachments/123830435/JoinVennDiagram.png&quot;</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>

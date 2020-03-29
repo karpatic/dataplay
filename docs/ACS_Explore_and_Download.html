@@ -5,8 +5,8 @@ title: Explore and Download
 keywords: fastai
 sidebar: home_sidebar
 
-summary: "In this tutorial, the basics of Colabs are introduced and ACS data is Downloaded."
-description: "In this tutorial, the basics of Colabs are introduced and ACS data is Downloaded."
+summary: "In this tutorial, the basics of Colabs are introduced and an American Community Survey (ACS) dataset is downloaded."
+description: "In this tutorial, the basics of Colabs are introduced and an American Community Survey (ACS) dataset is downloaded."
 ---
 <!--
 
@@ -47,13 +47,15 @@ description: "In this tutorial, the basics of Colabs are introduced and ACS data
 <ul>
 <li><p>Content covered in previous tutorials will be used in later tutorials.</p>
 </li>
-<li><p><strong>new code and or  information <em>should</em> have explanations and or descriptions</strong> attached.</p>
+<li><p><strong>New code and or  information <em>should</em> have explanations and or descriptions</strong> attached.</p>
 </li>
 <li><p>Concepts or code covered in previous tutorials will be used without being explaining in entirety.</p>
 </li>
 <li><p><strong>If content can not be found in the current tutorial and is not covered in previous tutorials, please let me know.</strong></p>
 </li>
 <li><p>This notebook has been optimized for Google Colabs ran on a Chrome Browser.</p>
+</li>
+<li><p>Statements made in light of view expressed, responsibility, errors and ommissions, use at risk, and licensing from part one of this tutorial extend throughout.</p>
 </li>
 </ul>
 
@@ -74,13 +76,7 @@ description: "In this tutorial, the basics of Colabs are introduced and ACS data
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="The-Tutorial"><strong>The Tutorial</strong><a class="anchor-link" href="#The-Tutorial"> </a></h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In this tutorial, the basics of Colabs are introduced.</p>
+<h4 id="The-Tutorial"><strong>The Tutorial</strong><a class="anchor-link" href="#The-Tutorial"> </a></h4><p>In this notebook, the basics of Colabs are introduced.</p>
 <ul>
 <li>We will explore ACS data catalogs to locate data we like</li>
 <li>We will programmatically download data from the American Community Survey (ACS)</li>
@@ -96,18 +92,12 @@ description: "In this tutorial, the basics of Colabs are introduced and ACS data
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Objectives"><strong>Objectives</strong><a class="anchor-link" href="#Objectives"> </a></h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>By the end of this tutorial users should have an understanding of:</p>
+<h4 id="Objectives"><strong>Objectives</strong><a class="anchor-link" href="#Objectives"> </a></h4><p>By the end of this tutorial users should have an understanding of:</p>
 <ul>
 <li>Google Colabs</li>
 <li>Census Data</li>
 <li>Exploring, Retrieveing, and cleaning ACS Data programmatically</li>
-<li>the 'retrieve_acs_data()' function, and how to use it in the future.</li>
+<li>the 'retrieve_acs_data()' function, and how to use it in the future</li>
 </ul>
 
 </div>
@@ -185,10 +175,10 @@ description: "In this tutorial, the basics of Colabs are introduced and ACS data
 <p>1) American Community Survey (ACS)</p>
 <ul>
 <li>First released to the public in 2006  </li>
-<li>Derived using 5 Year Estimates (past 5 years of data)</li>
+<li>Derived using 5 Year Estimates (Past 5 years of data)</li>
 <li>Delievered Annually</li>
 <li>Delievered at Tract Level. (READ -&gt; 'Geographic Granularity')</li>
-<li>Data's Margins of error generally prohibit a more granular view </li>
+<li>Margin of error generally prohibit a more granular view </li>
 <li>ACS Data is accessible programmatically  (READ -&gt; 'ACS Programmatic Retrieval')(READ -&gt; 'Geographic Reference Code')</li>
 </ul>
 <p>2) Decienial Census</p>
@@ -381,7 +371,7 @@ Fact Finder provides a nice interface to explore available datasets. From Fact F
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>From ME:</p>
+<p>Tutorial Notes:</p>
 <ul>
 <li>Details and Subject tables are derived using the 5 year ACS data.</li>
 <li><ul>
@@ -394,7 +384,7 @@ Fact Finder provides a nice interface to explore available datasets. From Fact F
 <li>The Subjects Table contains ACS data in convenient groups </li>
 <li>BNIA create their data mostly using Details table, but sometimes pulling the data from a Subject Table is more convenient (the data would otherwise be found along multiple details tables).</li>
 </ul>
-<p>From the ACS Website:</p>
+<p>ACS Website Notes:</p>
 <ul>
 <li><p>Detailed Tables contain the most detailed cross-tabulations, many of which are published down to block groups. The data are population counts. There are over 20,000 variables in this dataset.</p>
 </li>
@@ -446,7 +436,7 @@ Fact Finder provides a nice interface to explore available datasets. From Fact F
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>You can also import file directly into a temporary folder in a public folder</p>
+<p>You can also import file directly into a temporary folder in a public folder.</p>
 
 </div>
 </div>
@@ -505,7 +495,7 @@ Fact Finder provides a nice interface to explore available datasets. From Fact F
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The Data Structure we recieve is different than the prior table.</p>
-<p>Intake and processing is different as a result</p>
+<p>Intake and processing is different as a result.</p>
 <p>Now lets explore what we got, just like before.</p>
 <p>Only difference is that the column names are automatically included in this query.</p>
 

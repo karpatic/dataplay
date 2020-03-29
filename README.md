@@ -12,6 +12,10 @@ The code is on <a href="https://pypi.org/project/test-template/">PyPI</a> so you
 pip install dataplay geopandas
 ```
 
+    [31mERROR: Could not find a version that satisfies the requirement dataplay (from versions: none)[0m
+    [31mERROR: No matching distribution found for dataplay[0m
+
+
 From the terminal to install the code and its dependencies
 
 ## How to use
@@ -27,6 +31,29 @@ Heres an example:
 ```
 from dataplay.acsDownload import retrieve_acs_data
 ```
+
+
+    ---------------------------------------------------------------------------
+
+    ModuleNotFoundError                       Traceback (most recent call last)
+
+    <ipython-input-1-a3c7015a843e> in <module>()
+    ----> 1 from dataplay.acsDownload import retrieve_acs_data
+    
+
+    ModuleNotFoundError: No module named 'dataplay'
+
+    
+
+    ---------------------------------------------------------------------------
+    NOTE: If your import is failing due to a missing package, you can
+    manually install dependencies using either !pip or !apt.
+    
+    To view examples of installing some common dependencies, click the
+    "Open Examples" button below.
+    ---------------------------------------------------------------------------
+
+
 
 ```
 # Define our download parameters.
@@ -145,7 +172,7 @@ df.head()
 
 
 
-#### Legal
+## Legal
 
 __Disclaimer__
 

@@ -3,9 +3,11 @@
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {"InteractiveShell.ast_node_interactivity": "01_ACS_Explore_and_Download.ipynb",
-         "retrieve_acs_data": "01_ACS_Explore_and_Download.ipynb"}
+         "retrieve_acs_data": "01_ACS_Explore_and_Download.ipynb",
+         "mergeDatasets": "02_Merge_Data.ipynb"}
 
-modules = ["acsDownload.py"]
+modules = ["acsDownload.py",
+           "mergeData.py"]
 
 doc_url = "https://karpatic.github.io/dataplay/"
 

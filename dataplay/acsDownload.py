@@ -6,8 +6,6 @@ __all__ = ['retrieve_acs_data']
 # hide
 # @title Run: Import Modules
 
-%%capture
-
 # Once installed we need to import and configure the Widgets
 import ipywidgets as widgets
 from IPython.core.interactiveshell import InteractiveShell

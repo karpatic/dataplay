@@ -3,9 +3,8 @@
 __all__ = ['mergeDatasets']
 
 # Cell
-#@title Run: Import Modules
-
-%%capture
+# hide
+# @title Run: Import Modules
 
 # These imports will handle everything
 import os
@@ -16,8 +15,6 @@ import pandas as pd
 pd.set_option('max_colwidth', 20)
 pd.set_option('display.expand_frame_repr', False)
 pd.set_option('display.precision', 2)
-
-from .acsDownload import retrieve_acs_data
 
 # Cell
 #@title Run: Create mergeDatasets()

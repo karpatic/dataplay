@@ -18,6 +18,7 @@ dataplay.egg-info/top_level.txt
 dataplay/__pycache__/__init__.cpython-36.pyc
 dataplay/__pycache__/_nbdev.cpython-36.pyc
 dataplay/__pycache__/acsDownload.cpython-36.pyc
+dataplay/__pycache__/mergeData.cpython-36.pyc
 docs/.gitignore
 docs/ACS_Explore_and_Download.html
 docs/ACS_From_Download_To_Gif.html

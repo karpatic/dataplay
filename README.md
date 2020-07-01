@@ -2,7 +2,22 @@
 > The one stop shop to learn about data intake, processing, and visualization.
 
 
+[![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://opensource.org/) 
+[![NPM License](https://img.shields.io/npm/l/all-contributors.svg?style=flat)](https://github.com/tterb/hyde/blob/master/LICENSE)
+[![Active](http://img.shields.io/badge/Status-Active-green.svg)](https://karpatic.github.io) 
+[![Python Versions](https://img.shields.io/pypi/pyversions/yt2mp3.svg)](https://pypi.python.org/pypi/yt2mp3/)
+[![GitHub last commit](https://img.shields.io/github/last-commit/karpatic/dataplay.svg?style=flat)]() 
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/) 
+
 This homepage will show you just some of the things you can do with data.
+
+[![GitHub stars](https://img.shields.io/github/stars/tterb/playmusic.svg?style=social&label=Star)](https://github.com/karpatic/dataplay) 
+[![GitHub watchers](https://img.shields.io/github/watchers/tterb/playmusic.svg?style=social&label=Watch)](https://github.com/karpatic/dataplay) 
+[![GitHub forks](https://img.shields.io/github/forks/tterb/playmusic.svg?style=social&label=Fork)](https://github.com/karpatic/dataplay) 
+[![GitHub followers](https://img.shields.io/github/followers/tterb.svg?style=social&label=Follow)](https://github.com/karpatic/dataplay) 
+
+[![Tweet](https://img.shields.io/twitter/url/https/github.com/karpatic/dataplay.svg?style=social)](https://twitter.com/intent/tweet?text=Check%20out%20this%20%E2%9C%A8%20colab%20by%20@bniajfi%20https://github.com/karpatic/dataplay%20%F0%9F%A4%97) 
+[![Twitter Follow](https://img.shields.io/twitter/follow/bniajfi.svg?style=social)](https://twitter.com/bniajfi)
 
 ## Install
 
@@ -11,10 +26,6 @@ The code is on <a href="https://pypi.org/project/test-template/">PyPI</a> so you
 ```
 pip install dataplay geopandas
 ```
-
-    [31mERROR: Could not find a version that satisfies the requirement dataplay (from versions: none)[0m
-    [31mERROR: No matching distribution found for dataplay[0m
-
 
 From the terminal to install the code and its dependencies
 
@@ -27,33 +38,6 @@ retrieve_acs_data(state, county, tract, tableId, year, saveAcs)
 ```
 
 Heres an example:
-
-```
-from dataplay.acsDownload import retrieve_acs_data
-```
-
-
-    ---------------------------------------------------------------------------
-
-    ModuleNotFoundError                       Traceback (most recent call last)
-
-    <ipython-input-1-a3c7015a843e> in <module>()
-    ----> 1 from dataplay.acsDownload import retrieve_acs_data
-    
-
-    ModuleNotFoundError: No module named 'dataplay'
-
-    
-
-    ---------------------------------------------------------------------------
-    NOTE: If your import is failing due to a missing package, you can
-    manually install dependencies using either !pip or !apt.
-    
-    To view examples of installing some common dependencies, click the
-    "Open Examples" button below.
-    ---------------------------------------------------------------------------
-
-
 
 ```
 # Define our download parameters.

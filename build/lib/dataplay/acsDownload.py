@@ -3,10 +3,8 @@
 __all__ = ['retrieve_acs_data']
 
 # Cell
-#@title Run: Import Modules
-
-# %%capture
-# ^ will hide unruly the output so as not to confuse users
+# hide
+# @title Run: Import Modules
 
 # Once installed we need to import and configure the Widgets
 import ipywidgets as widgets
@@ -56,9 +54,9 @@ fiona.drvsupport.supported_drivers['KML'] = 'rw' # enable KML support which is d
 # https://www.census.gov/cgi-bin/geo/shapefiles/index.php?year=2010&layergroup=Census+Tracts
 
 # load libraries
-#from shapely.wkt import loads
-#from pandas import ExcelWriter
-#from pandas import ExcelFile
+# from shapely.wkt import loads
+# from pandas import ExcelWriter
+# from pandas import ExcelFile
 import matplotlib.pyplot as plt
 import glob
 import imageio
@@ -89,7 +87,7 @@ import imageio
 # Acs Data.
 # Prints to ../../data/2_cleaned/acs/
 
-def retrieve_acs_data(state, county, tract, tableId, year, saveAcs):
+def retrieve_acs_data(state, county, tract, tableId, year, saveOriginal, save):
     dictionary = ''
     keys = []
     vals = []

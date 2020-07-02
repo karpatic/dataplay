@@ -3,7 +3,6 @@
 __all__ = ['mergeDatasets']
 
 # Cell
-# hide
 # @title Run: Import Modules
 
 # These imports will handle everything
@@ -12,18 +11,13 @@ import sys
 import csv
 import numpy as np
 import pandas as pd
-pd.set_option('max_colwidth', 20)
-pd.set_option('display.expand_frame_repr', False)
-pd.set_option('display.precision', 2)
+from .acsDownload import retrieve_acs_data
 
 # Cell
 #@title Run: Create mergeDatasets()
 
 # Geometry_DS = https://docs.google.com/spreadsheets/d/e/2PACX-1vTPKW6YOHPFvkw3FM3m5y67-Aa5ZlrM0Ee1Fb57wlGuldr99sEvVWnkej30FXhSb3j8o9gr8izq2ZRP/pub?output=csv
 # Data_DS = https://docs.google.com/spreadsheets/d/e/2PACX-1vREwwa_s8Ix39OYGnnS_wA8flOoEkU7reIV4o3ZhlwYhLXhpNEvnOia_uHUDBvnFptkLLHHlaQNvsQE/pub?output=csv
-
-# Import needed modules
-import os, sys, csv, pandas as pd, numpy as np
 
 def mergeDatasets(left_ds=False,
                   right_ds=False,
@@ -127,9 +121,6 @@ def mergeDatasets(left_ds=False,
           if (colExists): return col
           else: return processColumn(df, col, interactive);
         except: return processColumn(df, col, interactive);
-
-
-
 
 
 

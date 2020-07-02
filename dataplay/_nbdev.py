@@ -7,7 +7,7 @@ index = {"InteractiveShell.ast_node_interactivity": "01_ACS_Explore_and_Download
          "mergeDatasets": "02_Merge_Data.ipynb"}
 
 modules = ["acsDownload.py",
-           "mergeData.py"]
+           "merge.py"]
 
 doc_url = "https://karpatic.github.io/dataplay/"
 

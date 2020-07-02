@@ -30,7 +30,7 @@ description: "In this tutorial, the basics of Colabs are introduced and an Ameri
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>/content/drive/My Drive/colabs/dataplay/dataplay/acsDownload.py:26: FutureWarning: Passing a negative integer is deprecated in version 1.0 and will not be supported in future version. Instead, use None to not limit the column width.
+<pre>/content/drive/My Drive/colabs/dataplay/dataplay/acsDownload.py:27: FutureWarning: Passing a negative integer is deprecated in version 1.0 and will not be supported in future version. Instead, use None to not limit the column width.
   pd.set_option(&#39;display.max_colwidth&#39;, -1)
 /usr/local/lib/python3.6/dist-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use &#34;pip install psycopg2-binary&#34; instead. For details see: &lt;http://initd.org/psycopg/docs/install.html#binary-install-from-pypi&gt;.
   &#34;&#34;&#34;)
@@ -150,9 +150,7 @@ description: "In this tutorial, the basics of Colabs are introduced and an Ameri
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#@title Run: View User Path</span>
-
-<span class="o">%%</span><span class="k">html</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">html</span>
 &lt;img src=&quot;https://charleskarpati.com/images/viewuserpath_short.png&quot;&gt;
 </pre></div>
 
@@ -267,9 +265,7 @@ description: "In this tutorial, the basics of Colabs are introduced and an Ameri
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#@title Run: Census Granularities</span>
-
-<span class="o">%%</span><span class="k">html</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">html</span>
 &lt;img src=&quot;https://charleskarpati.com/images/census_granularities.png&quot;&gt;
 </pre></div>
 
@@ -463,38 +459,10 @@ Fact Finder provides a nice interface to explore available datasets. From Fact F
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>You will need to this all installed and imported in order for anything following it to work</p>
+<p>Install these libraries onto the virtual environment.</p>
 
-<pre><code>pip install ipywidgets geopandas</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-
-<pre><code>import ipywidgets as widgets
-from IPython.core.interactiveshell import InteractiveShell
-import ipywidgets as widgets
-from ipywidgets import interact, interact_manual
-import urllib.request as urllib 
-from urllib.parse import urlencode 
-import socket 
-import pandas as pd
-import json 
-import numpy as np
-from pandas.io.json import json_normalize
-import csv
-import geopandas as gpd
-import psycopg2,pandas,numpy
-from shapely import wkb
-from shapely.wkt import loads
-import os
-import sys
-import fiona
-import matplotlib.pyplot as plt
-import glob
-import imageio</code></pre>
+<pre><code>! pip install  -U -q ipywidgets 
+! pip install geopandas</code></pre>
 
 </div>
 </div>
@@ -509,9 +477,7 @@ import imageio</code></pre>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>/usr/local/lib/python3.6/dist-packages/ipykernel_launcher.py:22: FutureWarning: Passing a negative integer is deprecated in version 1.0 and will not be supported in future version. Instead, use None to not limit the column width.
-/usr/local/lib/python3.6/dist-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use &#34;pip install psycopg2-binary&#34; instead. For details see: &lt;http://initd.org/psycopg/docs/install.html#binary-install-from-pypi&gt;.
-  &#34;&#34;&#34;)
+<pre>/usr/local/lib/python3.6/dist-packages/ipykernel_launcher.py:23: FutureWarning: Passing a negative integer is deprecated in version 1.0 and will not be supported in future version. Instead, use None to not limit the column width.
 </pre>
 </div>
 </div>
@@ -681,7 +647,7 @@ metaDataTable[ metaDataTable['concept'].str.contains(concept.upper(), na=False) 
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="retrieve_acs_data" class="doc_header"><code>retrieve_acs_data</code><a href="https://github.com/karpatic/dataplay/tree/master/dataplay/acsDownload.py#L90" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>retrieve_acs_data</code>(<strong><code>state</code></strong>, <strong><code>county</code></strong>, <strong><code>tract</code></strong>, <strong><code>tableId</code></strong>, <strong><code>year</code></strong>, <strong><code>saveOriginal</code></strong>, <strong><code>save</code></strong>)</p>
+<h4 id="retrieve_acs_data" class="doc_header"><code>retrieve_acs_data</code><a href="https://github.com/karpatic/dataplay/tree/master/dataplay/acsDownload.py#L90" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>retrieve_acs_data</code>(<strong><code>state</code></strong>, <strong><code>county</code></strong>, <strong><code>tract</code></strong>, <strong><code>tableId</code></strong>, <strong><code>year</code></strong>, <strong><code>save</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -963,7 +929,7 @@ metaDataTable[ metaDataTable['concept'].str.contains(concept.upper(), na=False) 
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># state, county, tract, tableId, year, saveOriginal, save</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">retrieve_acs_data</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">county</span><span class="p">,</span> <span class="n">tract</span><span class="p">,</span> <span class="n">tableId</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">saveAcs</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">retrieve_acs_data</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">county</span><span class="p">,</span> <span class="n">tract</span><span class="p">,</span> <span class="n">tableId</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">saveAcs</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 

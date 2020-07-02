@@ -3,17 +3,18 @@
 __all__ = ['retrieve_acs_data']
 
 # Cell
-# hide
 # @title Run: Import Modules
 
-# Once installed we need to import and configure the Widgets
+# Once installed we need to..
+
+# import and configure the Widgets
 import ipywidgets as widgets
 from IPython.core.interactiveshell import InteractiveShell
 InteractiveShell.ast_node_interactivity = 'all'
 import ipywidgets as widgets
 from ipywidgets import interact, interact_manual
 
-# Used 4 Importing Data
+# About importing data
 import urllib.request as urllib
 from urllib.parse import urlencode
 # This Prevents Timeouts when Importing
@@ -24,14 +25,14 @@ socket.setdefaulttimeout(10.0)
 import pandas as pd
 # Show entire column widths
 pd.set_option('display.max_colwidth', -1)
-# 4 Working with Json Data
+# Working with Json Data
 import json
-# 4 Data Processing
+# Data Processing
 import numpy as np
-# 4 Reading Json Data into Pandas
+# Reading Json Data into Pandas
 from pandas.io.json import json_normalize
 
-# 4 exporting data as CSV
+# Export data as CSV
 import csv
 
 
@@ -46,12 +47,10 @@ import os
 import sys
 
 # In case file is KML
+# enable KML support; disabled by default
 import fiona
-fiona.drvsupport.supported_drivers['kml'] = 'rw' # enable KML support which is disabled by default
-fiona.drvsupport.supported_drivers['KML'] = 'rw' # enable KML support which is disabled by default
-
-# https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.2010.html
-# https://www.census.gov/cgi-bin/geo/shapefiles/index.php?year=2010&layergroup=Census+Tracts
+fiona.drvsupport.supported_drivers['kml'] = 'rw'
+fiona.drvsupport.supported_drivers['KML'] = 'rw'
 
 # load libraries
 # from shapely.wkt import loads
@@ -81,13 +80,14 @@ import imageio
 # tract (required)
 # tableId (required)
 # year (required)
-# includeCountyAgg (required)(todo)
-# saveAcs (required)
+# includeCountyAgg (True)(todo)
+# replaceColumnNames (False)(todo)
+# save (required)
 #output:
 # Acs Data.
 # Prints to ../../data/2_cleaned/acs/
 
-def retrieve_acs_data(state, county, tract, tableId, year, saveOriginal, save):
+def retrieve_acs_data(state, county, tract, tableId, year, save):
     dictionary = ''
     keys = []
     vals = []
@@ -229,9 +229,11 @@ def retrieve_acs_data(state, county, tract, tableId, year, saveOriginal, save):
     # Set the 'NAME' Column as the index dropping the default increment
     table.set_index("NAME", inplace = True)
 
-    if saveAcs:
+    if save:
+
       # Save the raw data as 'TABLEID_5yYEAR.csv'
       table.to_csv('./'+state+county+'_'+tableId+'_5y'+year+'_est_Original.csv', quoting=csv.QUOTE_ALL)
+
       # Remove the id in the column names & Save the data as 'TABLEID_5yYEAR_est.csv'
       saveThis = table.rename( columns = lambda x : ( str(x)[:] if str(x) in [
         "NAME","state","county","tract"] else str(x)[12:] )  )

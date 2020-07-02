@@ -8,7 +8,7 @@ setup.py
 dataplay/__init__.py
 dataplay/_nbdev.py
 dataplay/acsDownload.py
-dataplay/mergeData.py
+dataplay/merge.py
 dataplay.egg-info/PKG-INFO
 dataplay.egg-info/SOURCES.txt
 dataplay.egg-info/dependency_links.txt

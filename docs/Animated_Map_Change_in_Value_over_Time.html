@@ -19,11 +19,14 @@ description: "In this tutorial, the basics of creating map gifs is introduced"
 -->
 
 <div class="container" id="notebook-container">
-    {% raw %}
         
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This Coding Notebook is the <strong>fourth</strong> in a series.</p>
@@ -121,6 +124,8 @@ description: "In this tutorial, the basics of creating map gifs is introduced"
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -139,6 +144,10 @@ description: "In this tutorial, the basics of creating map gifs is introduced"
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -244,12 +253,16 @@ description: "In this tutorial, the basics of creating map gifs is introduced"
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Configure-Enviornment">Configure Enviornment<a class="anchor-link" href="#Configure-Enviornment"> </a></h3>
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -274,12 +287,16 @@ description: "In this tutorial, the basics of creating map gifs is introduced"
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="(Optional)-Local-File-Access">(Optional) Local File Access<a class="anchor-link" href="#(Optional)-Local-File-Access"> </a></h3>
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -314,12 +331,16 @@ description: "In this tutorial, the basics of creating map gifs is introduced"
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="File-Access-Conveince-Functions">File Access Conveince Functions<a class="anchor-link" href="#File-Access-Conveince-Functions"> </a></h4>
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -341,12 +362,16 @@ description: "In this tutorial, the basics of creating map gifs is introduced"
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Conveince-Functions">Conveince Functions<a class="anchor-link" href="#Conveince-Functions"> </a></h3>
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -370,175 +395,14 @@ description: "In this tutorial, the basics of creating map gifs is introduced"
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This next function was created in previous colabs. We are going to recycle it for use in this lab</p>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#@title Run This Cell: Create mergeDatasets()</span>
-
-<span class="k">def</span> <span class="nf">mergeDatasets</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cw</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">save</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">False</span> <span class="p">):</span> 
-    
-    
-  <span class="c1"># Check if the columns actually exist</span>
-  <span class="k">def</span> <span class="nf">checkColumns</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">cw</span><span class="p">,</span> <span class="n">left_on</span><span class="p">,</span> <span class="n">right_on</span><span class="p">,</span> <span class="n">how</span><span class="p">):</span> 
-    <span class="n">dfkeyexist</span> <span class="o">=</span> <span class="p">{</span><span class="n">left_on</span><span class="p">}</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
-    <span class="n">cwkeyexist</span> <span class="o">=</span> <span class="p">{</span><span class="n">right_on</span><span class="p">}</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">cw</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> 
-    <span class="n">cscolexist</span> <span class="o">=</span> <span class="p">(</span> <span class="p">{</span><span class="n">how</span><span class="p">}</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">cw</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="ow">or</span> 
-                  <span class="n">how</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="s1">&#39;outer&#39;</span><span class="p">,</span> <span class="s1">&#39;inner&#39;</span><span class="p">]</span> <span class="p">)</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;df&#39;</span><span class="p">,</span> <span class="n">dfkeyexist</span><span class="p">,</span> <span class="s1">&#39;cw&#39;</span><span class="p">,</span> <span class="n">cwkeyexist</span><span class="p">,</span> <span class="s1">&#39;cs&#39;</span><span class="p">,</span> <span class="n">cscolexist</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="p">(</span><span class="n">dfkeyexist</span> <span class="ow">and</span> <span class="n">cwkeyexist</span> <span class="ow">and</span> <span class="n">cscolexist</span><span class="p">)</span>
-
-  <span class="c1"># Ensure data types are the same</span>
-  <span class="k">def</span> <span class="nf">coerceDtypes</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">cw</span><span class="p">,</span> <span class="n">left_on</span><span class="p">,</span> <span class="n">right_on</span><span class="p">):</span>
-    <span class="n">status</span> <span class="o">=</span> <span class="kc">False</span>
-    <span class="n">foreignDtype</span> <span class="o">=</span> <span class="n">cw</span><span class="p">[</span><span class="n">right_on</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span>
-    <span class="n">localDtype</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">left_on</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span>  
-    
-    <span class="c1"># Coerce one way or the other if possible</span>
-    <span class="k">if</span> <span class="n">localDtype</span> <span class="o">==</span> <span class="s1">&#39;int64&#39;</span> <span class="ow">and</span> <span class="n">foreignDtype</span> <span class="o">==</span> <span class="s1">&#39;object&#39;</span><span class="p">:</span>
-      <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Converting Foreign Key from Object to Int&#39;</span> <span class="p">)</span>
-      <span class="n">cw</span><span class="p">[</span><span class="n">right_on</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">cw</span><span class="p">[</span><span class="n">right_on</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
-      <span class="n">foreignDtype</span> <span class="o">=</span> <span class="n">cw</span><span class="p">[</span><span class="n">right_on</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span>
-      
-    <span class="k">if</span> <span class="n">localDtype</span> <span class="o">==</span> <span class="s1">&#39;object&#39;</span> <span class="ow">and</span> <span class="n">foreignDtype</span> <span class="o">==</span> <span class="s1">&#39;int64&#39;</span><span class="p">:</span>
-      <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Converting Foreign Key from Object to Int&#39;</span> <span class="p">)</span>
-      <span class="n">df</span><span class="p">[</span><span class="n">left_on</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">left_on</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
-      <span class="n">localDtype</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">left_on</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span>
-      
-    <span class="c1"># Return the data and the coerce status</span>
-    <span class="k">if</span> <span class="n">localDtype</span> <span class="o">==</span> <span class="n">foreignDtype</span><span class="p">:</span> <span class="n">status</span> <span class="o">=</span> <span class="kc">True</span>
-    <span class="k">return</span> <span class="n">df</span><span class="p">,</span> <span class="n">cw</span><span class="p">,</span> <span class="n">status</span>
-
-
-  <span class="c1"># Decide to perform a merge or commit a pull</span>
-  <span class="k">def</span> <span class="nf">mergeOrPull</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">cw</span><span class="p">,</span> <span class="n">left_on</span><span class="p">,</span> <span class="n">right_on</span><span class="p">,</span> <span class="n">how</span><span class="p">):</span>  
-    
-    <span class="k">def</span> <span class="nf">merge</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">cw</span><span class="p">,</span> <span class="n">left_on</span><span class="p">,</span> <span class="n">right_on</span><span class="p">,</span> <span class="n">how</span><span class="p">):</span>
-      <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Merging&#39;</span><span class="p">,</span> <span class="n">left_on</span><span class="p">,</span> <span class="n">right_on</span><span class="p">,</span> <span class="n">how</span><span class="p">);</span> 
-      <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">cw</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="n">left_on</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="n">right_on</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="n">how</span><span class="p">)</span>
-      <span class="c1"># df.drop(left_on, axis=1)</span>
-      <span class="n">df</span><span class="p">[</span><span class="n">right_on</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">right_on</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s1">&#39;empty&#39;</span><span class="p">)</span>
-      <span class="k">return</span> <span class="n">df</span>
-
-    <span class="k">def</span> <span class="nf">pull</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">cw</span><span class="p">,</span> <span class="n">left_on</span><span class="p">,</span> <span class="n">right_on</span><span class="p">,</span> <span class="n">how</span><span class="p">):</span>
-      <span class="n">crswlk</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">cw</span><span class="p">[</span><span class="n">right_on</span><span class="p">],</span> <span class="n">cw</span><span class="p">[</span><span class="n">how</span><span class="p">]</span>  <span class="p">)</span> <span class="p">)</span>
-      <span class="n">dtype</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">left_on</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span>
-      <span class="c1"># print(&#39;Pulling&#39;); </span>
-      <span class="c1"># print(&#39;df.columns&#39;, left_on, df[left_on].dtype)</span>
-      <span class="c1"># print(&#39;cw.columns&#39;, right_on, cw[right_on].dtype)</span>
-      <span class="c1"># print(&#39;left_on&#39;, left_on, &#39;right_on&#39;, right_on, &#39;how&#39;, how)</span>
-      <span class="k">if</span> <span class="n">dtype</span> <span class="o">==</span><span class="s1">&#39;object&#39;</span><span class="p">:</span>  <span class="n">df</span><span class="p">[</span><span class="n">how</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">crswlk</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="n">left_on</span><span class="p">]),</span> <span class="s2">&quot;empty&quot;</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-      <span class="k">elif</span> <span class="n">dtype</span> <span class="o">==</span> <span class="s1">&#39;int64&#39;</span><span class="p">:</span> 
-        <span class="n">df</span><span class="p">[</span><span class="n">how</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">crswlk</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="n">left_on</span><span class="p">]),</span> <span class="s2">&quot;empty&quot;</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-      <span class="k">return</span> <span class="n">df</span>
-    
-      <span class="c1">#crswlk = dict(zip(crosswalk[foreign_tract_name], crosswalk[new_column_name]  ) )</span>
-      <span class="c1">#if foreignDtype == &#39;object&#39; and foreignDtype == &#39;object&#39;:</span>
-      <span class="c1">#  temp[new_column_name] = temp.apply(lambda row: crswlk.get(str(row[local_tract_name]), &quot;empty&quot;), axis=1)</span>
-      <span class="c1">#elif foreignDtype == &#39;int64&#39; and foreignDtype == &#39;int64&#39;:</span>
-      <span class="c1">#  temp[new_column_name] = temp.apply(lambda row: crswlk.get(int(row[local_tract_name]), &quot;empty&quot;), axis=1)</span>
-      <span class="c1">#else: print(&#39;THERE BE PROBLEM&#39;)</span>
-    
-    <span class="n">mergeType</span> <span class="o">=</span> <span class="n">how</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="s1">&#39;outer&#39;</span><span class="p">,</span> <span class="s1">&#39;inner&#39;</span><span class="p">]</span>
-    <span class="k">if</span> <span class="n">mergeType</span><span class="p">:</span> <span class="k">return</span> <span class="n">merge</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">cw</span><span class="p">,</span> <span class="n">left_on</span><span class="p">,</span> <span class="n">right_on</span><span class="p">,</span> <span class="n">how</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span> <span class="k">return</span> <span class="n">pull</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">cw</span><span class="p">,</span> <span class="n">left_on</span><span class="p">,</span> <span class="n">right_on</span><span class="p">,</span> <span class="n">how</span><span class="p">)</span>
-    
-  
-    
-  <span class="c1"># Filter between matched records and not.</span>
-  <span class="k">def</span> <span class="nf">filterEmpties</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">cw</span><span class="p">,</span> <span class="n">left_on</span><span class="p">,</span> <span class="n">right_on</span><span class="p">,</span> <span class="n">how</span><span class="p">):</span>
-    
-    <span class="k">if</span> <span class="n">how</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="s1">&#39;outer&#39;</span><span class="p">,</span> <span class="s1">&#39;inner&#39;</span><span class="p">]:</span> <span class="n">how</span> <span class="o">=</span> <span class="n">right_on</span>
-    <span class="n">nomatch</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">how</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;empty&#39;</span><span class="p">]</span>
-    <span class="n">nomatch</span> <span class="o">=</span> <span class="n">nomatch</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="n">left_on</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    
-    <span class="k">if</span> <span class="n">nomatch</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-      <span class="c1"># Do the same thing with our foreign tracts</span>
-      <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Local Column Values Not Matched &#39;</span><span class="p">)</span>
-      <span class="nb">print</span><span class="p">(</span><span class="n">nomatch</span><span class="p">[</span><span class="n">left_on</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span> <span class="p">)</span>
-      <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nomatch</span><span class="p">[</span><span class="n">left_on</span><span class="p">]))</span>
-      <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-      <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Crosswalk Unique Column Values&#39;</span><span class="p">)</span>
-      <span class="nb">print</span><span class="p">(</span><span class="n">cw</span><span class="p">[</span><span class="n">right_on</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span> <span class="p">)</span>
-    
-    <span class="c1"># Create a new column with the tracts value mapped to its corresponding value from the crossswalk</span>
-    <span class="n">df</span><span class="p">[</span><span class="n">how</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;empty&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="n">how</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="c1"># cw = cw.sort_values(by=how, ascending=True)</span>
-    <span class="k">return</span> <span class="n">df</span>
-
-  <span class="c1"># Save the data (again) as Cleaned for me to use in the next scripts</span>
-  <span class="k">def</span> <span class="nf">saveCrosswalk</span><span class="p">(</span><span class="n">save</span><span class="p">,</span> <span class="n">fileName</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">save</span><span class="p">:</span> 
-      <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SavingCrosswalk&#39;</span><span class="p">);</span> 
-      <span class="k">if</span> <span class="n">fileName</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="n">fileName</span><span class="p">);</span> <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">fileName</span><span class="p">,</span> <span class="n">quoting</span><span class="o">=</span><span class="n">csv</span><span class="o">.</span><span class="n">QUOTE_ALL</span><span class="p">)</span>
-      <span class="k">else</span><span class="p">:</span> <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;./crosswalk-matched-&#39;</span><span class="o">+</span><span class="n">left_on</span><span class="o">+</span><span class="s1">&#39;-to-&#39;</span><span class="o">+</span><span class="n">right_on</span><span class="o">+</span><span class="s1">&#39;-pulling-&#39;</span><span class="o">+</span><span class="n">how</span><span class="o">+</span><span class="s1">&#39;.csv&#39;</span><span class="p">,</span> <span class="n">quoting</span><span class="o">=</span><span class="n">csv</span><span class="o">.</span><span class="n">QUOTE_ALL</span><span class="p">)</span>
-
-  <span class="k">def</span> <span class="nf">getMergeParams</span><span class="p">():</span>
-
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please enter the location of your left dataset: &quot;</span> <span class="p">)</span> <span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;Left Columns &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">))</span>
-
-    <span class="n">crosswalk</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please enter the location of your right dataset: &quot;</span> <span class="p">)</span> <span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;Right Columns &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">crosswalk</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-
-    <span class="n">left_on</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Left on: &quot;</span> <span class="p">)</span>
-    <span class="n">right_on</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Right on: &quot;</span> <span class="p">)</span>
-    <span class="n">how</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;How: (‘left’, ‘right’, ‘outer’, ‘inner’, columnName) &quot;</span> <span class="p">)</span>
-
-    <span class="c1"># Save the data</span>
-    <span class="n">saveFile</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Save File (&#39;Y&#39; or &#39;N&#39;): &quot;</span><span class="p">)</span>
-    <span class="n">outFile</span> <span class="o">=</span> <span class="kc">False</span>
-    <span class="k">if</span> <span class="n">saveFile</span> <span class="o">==</span> <span class="s1">&#39;Y&#39;</span> <span class="ow">or</span> <span class="n">saveFile</span> <span class="o">==</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span>
-      <span class="n">outFile</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Saved Filename (Do not include the file extension ): &quot;</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">df</span><span class="p">,</span> <span class="n">crosswalk</span><span class="p">,</span> <span class="n">left_on</span><span class="p">,</span> <span class="n">right_on</span><span class="p">,</span> <span class="n">how</span><span class="p">,</span> <span class="n">saveFile</span><span class="p">,</span> <span class="n">outFile</span>
-    
-    
-  <span class="c1"># This function uses all the other functions</span>
-  <span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">cw</span><span class="p">,</span> <span class="n">left_on</span><span class="p">,</span> <span class="n">right_on</span><span class="p">,</span> <span class="n">how</span><span class="p">,</span> <span class="n">save</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-    
-    <span class="k">if</span> <span class="p">(</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">))</span> <span class="ow">or</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">cw</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">))</span> 
-        <span class="ow">or</span> <span class="ow">not</span> <span class="n">left_on</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">right_on</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">how</span><span class="p">):</span> <span class="k">return</span> <span class="n">crosswalkIt</span><span class="p">(</span> <span class="o">*</span><span class="n">getMergeParams</span><span class="p">()</span> <span class="p">);</span>
-    
-    <span class="c1"># Quit if the Columns dont exist</span>
-    <span class="n">status</span> <span class="o">=</span> <span class="n">checkColumns</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">cw</span><span class="p">,</span> <span class="n">left_on</span><span class="p">,</span> <span class="n">right_on</span><span class="p">,</span> <span class="n">how</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A specified column does not exist&#39;</span><span class="p">);</span> <span class="k">return</span> <span class="kc">False</span><span class="p">;</span>
-    
-    <span class="c1"># Quit if the foreign key data types wont align nicely</span>
-    <span class="n">df</span><span class="p">,</span> <span class="n">cw</span><span class="p">,</span> <span class="n">status</span> <span class="o">=</span> <span class="n">coerceDtypes</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">cw</span><span class="p">,</span> <span class="n">left_on</span><span class="p">,</span> <span class="n">right_on</span><span class="p">);</span>
-    <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Foreign keys data types do not match&#39;</span><span class="p">);</span> <span class="k">return</span> <span class="kc">False</span><span class="p">;</span>
-      
-    <span class="c1"># Perform the merge</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">mergeOrPull</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">cw</span><span class="p">,</span> <span class="n">left_on</span><span class="p">,</span> <span class="n">right_on</span><span class="p">,</span> <span class="n">how</span><span class="p">)</span>    
-    
-    <span class="c1"># Filter out columns not matched</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">filterEmpties</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">cw</span><span class="p">,</span> <span class="n">left_on</span><span class="p">,</span> <span class="n">right_on</span><span class="p">,</span> <span class="n">how</span><span class="p">)</span>
-    
-    <span class="c1"># Save this final result</span>
-    <span class="n">saveCrosswalk</span><span class="p">(</span><span class="n">save</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-                      
-    <span class="k">return</span> <span class="n">df</span>
-  
-  <span class="k">return</span> <span class="n">main</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">cw</span><span class="p">,</span> <span class="n">left_on</span><span class="p">,</span> <span class="n">right_on</span><span class="p">,</span> <span class="n">how</span><span class="p">,</span> <span class="n">save</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-<span class="c1"># https://docs.google.com/spreadsheets/d/e/2PACX-1vTPKW6YOHPFvkw3FM3m5y67-Aa5ZlrM0Ee1Fb57wlGuldr99sEvVWnkej30FXhSb3j8o9gr8izq2ZRP/pub?output=csv</span>
-<span class="c1"># https://docs.google.com/spreadsheets/d/e/2PACX-1vREwwa_s8Ix39OYGnnS_wA8flOoEkU7reIV4o3ZhlwYhLXhpNEvnOia_uHUDBvnFptkLLHHlaQNvsQE/pub?output=csv</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -552,6 +416,8 @@ description: "In this tutorial, the basics of creating map gifs is introduced"
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -579,6 +445,10 @@ description: "In this tutorial, the basics of creating map gifs is introduced"
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -592,6 +462,10 @@ description: "In this tutorial, the basics of creating map gifs is introduced"
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -622,6 +496,8 @@ Index([&#39;TRACTCE10&#39;, &#39;GEOID10&#39;, &#39;NAME10&#39;, &#39;CSA&#39;, 
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Import-Data-of-Interest:-(Creating-the-time-series-dataset)">Import Data of Interest: (Creating the time series dataset)<a class="anchor-link" href="#Import-Data-of-Interest:-(Creating-the-time-series-dataset)"> </a></h3>
@@ -637,6 +513,8 @@ Index([&#39;TRACTCE10&#39;, &#39;GEOID10&#39;, &#39;NAME10&#39;, &#39;CSA&#39;, 
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -650,6 +528,10 @@ Index([&#39;TRACTCE10&#39;, &#39;GEOID10&#39;, &#39;NAME10&#39;, &#39;CSA&#39;, 
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -677,6 +559,10 @@ Index([&#39;TRACTCE10&#39;, &#39;GEOID10&#39;, &#39;NAME10&#39;, &#39;CSA&#39;, 
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -703,6 +589,10 @@ Index([&#39;TRACTCE10&#39;, &#39;GEOID10&#39;, &#39;NAME10&#39;, &#39;CSA&#39;, 
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -720,6 +610,10 @@ Index([&#39;TRACTCE10&#39;, &#39;GEOID10&#39;, &#39;NAME10&#39;, &#39;CSA&#39;, 
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -734,6 +628,10 @@ Index([&#39;TRACTCE10&#39;, &#39;GEOID10&#39;, &#39;NAME10&#39;, &#39;CSA&#39;, 
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -748,6 +646,10 @@ Index([&#39;TRACTCE10&#39;, &#39;GEOID10&#39;, &#39;NAME10&#39;, &#39;CSA&#39;, 
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -762,6 +664,10 @@ Index([&#39;TRACTCE10&#39;, &#39;GEOID10&#39;, &#39;NAME10&#39;, &#39;CSA&#39;, 
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -776,6 +682,10 @@ Index([&#39;TRACTCE10&#39;, &#39;GEOID10&#39;, &#39;NAME10&#39;, &#39;CSA&#39;, 
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -790,6 +700,8 @@ Index([&#39;TRACTCE10&#39;, &#39;GEOID10&#39;, &#39;NAME10&#39;, &#39;CSA&#39;, 
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="MAPPING">MAPPING<a class="anchor-link" href="#MAPPING"> </a></h2>
@@ -806,6 +718,8 @@ Index([&#39;TRACTCE10&#39;, &#39;GEOID10&#39;, &#39;NAME10&#39;, &#39;CSA&#39;, 
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -820,6 +734,10 @@ Index([&#39;TRACTCE10&#39;, &#39;GEOID10&#39;, &#39;NAME10&#39;, &#39;CSA&#39;, 
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -1006,6 +924,10 @@ Index([&#39;TRACTCE10&#39;, &#39;GEOID10&#39;, &#39;NAME10&#39;, &#39;CSA&#39;, 
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -1635,6 +1557,8 @@ BHahZMBeA3JOlNdQrVxWUVEZd073pZaKisoEoAYeFRWVcUcNPCoqKuOOGnhUVFTGHTXwqKiojDtq
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Lets-make-a-GIF">Lets make a GIF<a class="anchor-link" href="#Lets-make-a-GIF"> </a></h2>
@@ -1649,6 +1573,8 @@ BHahZMBeA3JOlNdQrVxWUVEZd073pZaKisoEoAYeFRWVcUcNPCoqKuOOGnhUVFTGHTXwqKiojDtq
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -1664,6 +1590,10 @@ BHahZMBeA3JOlNdQrVxWUVEZd073pZaKisoEoAYeFRWVcUcNPCoqKuOOGnhUVFTGHTXwqKiojDtq
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -1791,6 +1721,8 @@ BHahZMBeA3JOlNdQrVxWUVEZd073pZaKisoEoAYeFRWVcUcNPCoqKuOOGnhUVFTGHTXwqKiojDtq
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Data exploration is essential! But not covered in this lab.</p>
@@ -1798,6 +1730,8 @@ BHahZMBeA3JOlNdQrVxWUVEZd073pZaKisoEoAYeFRWVcUcNPCoqKuOOGnhUVFTGHTXwqKiojDtq
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -2158,6 +2092,8 @@ gqABhMMNgiAIggYQDjcIgiAIGsD/D5vVqKbmGFfoAAAAAElFTkSuQmCC
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Everything is almost ready to start making our gifmap!</p>
@@ -2166,6 +2102,8 @@ gqABhMMNgiAIggYQDjcIgiAIGsD/D5vVqKbmGFfoAAAAAElFTkSuQmCC
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -2207,6 +2145,10 @@ Smallest Value:  -1 , Max Value: 154
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -2283,12 +2225,16 @@ Smallest Value:  -1 , Max Value: 154
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Final-Result">Final Result<a class="anchor-link" href="#Final-Result"> </a></h1>
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -2381,6 +2327,10 @@ Smallest Value:  -1 , Max Value: 154
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -2436,6 +2386,10 @@ Pictures were created
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -2497,6 +2451,7 @@ Pictures were created
 
 </div>
     {% endraw %}
+
 </div>
  
 

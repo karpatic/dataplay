@@ -19,24 +19,31 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 -->
 
 <div class="container" id="notebook-container">
-    {% raw %}
         
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This Coding Notebook is the <strong>fifth</strong> in a series.</p>
-<p>Interactive examples are provided along the way.</p>
-<p>This colab and more can be found at <a href="https://github.com/BNIA/colabs">https://github.com/BNIA/colabs</a></p>
+<p>An Interactive version can be found here <a href="https://colab.research.google.com/github/karpatic/dataplay/blob/master/notebooks/05_ACS_From_Download_To_Gif.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>.</p>
+<p>This colab and more can be found on our <a href="https://karpatic.github.io/dataplay/">webpage</a>.</p>
 <ul>
 <li><p>Content covered in previous tutorials will be used in later tutorials.</p>
 </li>
-<li><p><strong>new code and or  information <em>should</em> have explanations and or descriptions</strong> attached.</p>
+<li><p><strong>New code and or  information <em>should</em> have explanations and or descriptions</strong> attached.</p>
 </li>
 <li><p>Concepts or code covered in previous tutorials will be used without being explaining in entirety.</p>
 </li>
 <li><p><strong>If content can not be found in the current tutorial and is not covered in previous tutorials, please let me know.</strong></p>
+</li>
+<li><p>This notebook has been optimized for Google Colabs ran on a Chrome Browser.</p>
+</li>
+<li><p>Statements found in the index page on view expressed, responsibility, errors and ommissions, use at risk, and licensing  extend throughout the tutorial.</p>
 </li>
 </ul>
 
@@ -115,6 +122,8 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -128,6 +137,8 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Import-Python-Modules">Import Python Modules<a class="anchor-link" href="#Import-Python-Modules"> </a></h1>
@@ -141,6 +152,8 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -157,14 +170,14 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 <span class="c1"># Once installed we need to import and configure the Widgets</span>
 <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
 <span class="o">!</span>jupyter nbextension <span class="nb">enable</span> --py widgetsnbextension
-<span class="kn">from</span> <span class="nn">IPython.core.interactiveshell</span> <span class="kn">import</span> <span class="n">InteractiveShell</span>
+<span class="kn">from</span> <span class="nn">IPython.core.interactiveshell</span> <span class="k">import</span> <span class="n">InteractiveShell</span>
 <span class="n">InteractiveShell</span><span class="o">.</span><span class="n">ast_node_interactivity</span> <span class="o">=</span> <span class="s1">&#39;all&#39;</span>
 <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
-<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interact_manual</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="k">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interact_manual</span>
 
 <span class="c1"># Used 4 Importing Data</span>
 <span class="kn">import</span> <span class="nn">urllib.request</span> <span class="k">as</span> <span class="nn">urllib</span> 
-<span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">urlencode</span> 
+<span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="k">import</span> <span class="n">urlencode</span> 
 <span class="c1"># This Prevents Timeouts when Importing</span>
 <span class="kn">import</span> <span class="nn">socket</span> 
 <span class="n">socket</span><span class="o">.</span><span class="n">setdefaulttimeout</span><span class="p">(</span><span class="mf">10.0</span><span class="p">)</span>
@@ -178,7 +191,7 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 <span class="c1"># 4 Data Processing</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="c1"># 4 Reading Json Data into Pandas</span>
-<span class="kn">from</span> <span class="nn">pandas.io.json</span> <span class="kn">import</span> <span class="n">json_normalize</span>
+<span class="kn">from</span> <span class="nn">pandas.io.json</span> <span class="k">import</span> <span class="n">json_normalize</span>
 
 <span class="c1"># 4 exporting data as CSV</span>
 <span class="kn">import</span> <span class="nn">csv</span>
@@ -187,10 +200,10 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 <span class="c1"># Geo-Formatting</span>
 <span class="c1"># Postgres-Conversion</span>
 <span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
-<span class="kn">from</span> <span class="nn">geopandas</span> <span class="kn">import</span> <span class="n">GeoDataFrame</span>
+<span class="kn">from</span> <span class="nn">geopandas</span> <span class="k">import</span> <span class="n">GeoDataFrame</span>
 <span class="kn">import</span> <span class="nn">psycopg2</span><span class="o">,</span><span class="nn">pandas</span><span class="o">,</span><span class="nn">numpy</span>
-<span class="kn">from</span> <span class="nn">shapely</span> <span class="kn">import</span> <span class="n">wkb</span>
-<span class="kn">from</span> <span class="nn">shapely.wkt</span> <span class="kn">import</span> <span class="n">loads</span>
+<span class="kn">from</span> <span class="nn">shapely</span> <span class="k">import</span> <span class="n">wkb</span>
+<span class="kn">from</span> <span class="nn">shapely.wkt</span> <span class="k">import</span> <span class="n">loads</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 
@@ -217,6 +230,8 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Explore-Table-Directories">Explore Table Directories<a class="anchor-link" href="#Explore-Table-Directories"> </a></h1>
@@ -247,6 +262,8 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -286,6 +303,8 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Once you a table from the explorer has been picked, you can inspect its column names in the next part.</p>
@@ -294,6 +313,8 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -303,7 +324,7 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 
 <span class="kn">import</span> <span class="nn">json</span> 
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
-<span class="kn">from</span> <span class="nn">pandas.io.json</span> <span class="kn">import</span> <span class="n">json_normalize</span>
+<span class="kn">from</span> <span class="nn">pandas.io.json</span> <span class="k">import</span> <span class="n">json_normalize</span>
 
 <span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_columns&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
 <span class="c1">#--------------------</span>
@@ -312,7 +333,7 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 <span class="c1">#--------------------</span>
 <span class="n">tableId</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please enter a Table ID to inspect: &quot;</span><span class="p">)</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;https://api.census.gov/data/2017/acs/acs5/groups/</span><span class="si">{</span><span class="n">tableId</span><span class="si">}</span><span class="s1">.json&#39;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;https://api.census.gov/data/2017/acs/acs5/groups/</span><span class="si">{tableId}</span><span class="s1">.json&#39;</span>
 <span class="n">metaDataTable</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 
 <span class="n">metaDataTable</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">drop</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> 
@@ -327,6 +348,8 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Explore-the-Subject-Table-Directory">Explore the Subject Table Directory<a class="anchor-link" href="#Explore-the-Subject-Table-Directory"> </a></h2>
@@ -343,6 +366,8 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -397,6 +422,8 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Geographic-Reference-Codes">Geographic Reference Codes<a class="anchor-link" href="#Geographic-Reference-Codes"> </a></h1>
@@ -461,6 +488,8 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -640,6 +669,8 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now use this function to Download the Data!</p>
@@ -647,6 +678,8 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -669,6 +702,10 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -683,6 +720,8 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Congratulations!">Congratulations!<a class="anchor-link" href="#Congratulations!"> </a></h2><p>If you have gotten to this part, you have succesfully downloaded the ACS data.</p>
@@ -726,6 +765,8 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -744,6 +785,8 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>And now I will get a crosswalk.</p>
@@ -753,6 +796,8 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -773,6 +818,8 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now lets create our crosswalk function!</p>
@@ -785,6 +832,8 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -948,6 +997,8 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Lets Crosswalk! We have an original dataset, the crosswalk dataset,</p>
@@ -955,6 +1006,8 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -972,6 +1025,10 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -986,6 +1043,8 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Geographic data may be crosswalked as well. More information in the 'Maps' section.</p>
@@ -1009,6 +1068,8 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -1040,6 +1101,10 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -1176,6 +1241,10 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -1242,6 +1311,10 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -1308,6 +1381,10 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -1373,6 +1450,10 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -1439,6 +1520,10 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -1488,6 +1573,8 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now that our calculations have been created, lets create a final function that will download our data, optionally crosswalk and optionally aggregate it to the community level, and then run/return the appropriate calculation.</p>
@@ -1495,6 +1582,8 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -1508,6 +1597,10 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -1555,6 +1648,10 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -1592,6 +1689,10 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -1618,6 +1719,10 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -1637,6 +1742,10 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -1656,6 +1765,10 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -1675,6 +1788,10 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -1694,6 +1811,10 @@ description: "In this tutorial, we run the full gambit, from downloading acs dat
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -1825,6 +1946,8 @@ File Saved
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="MAPPING">MAPPING<a class="anchor-link" href="#MAPPING"> </a></h1>
@@ -1844,6 +1967,8 @@ File Saved
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -1861,6 +1986,8 @@ File Saved
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Importing Point Data:</p>
@@ -1868,6 +1995,8 @@ File Saved
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -2150,6 +2279,8 @@ File Saved
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Importing Geom Data</p>
@@ -2157,6 +2288,8 @@ File Saved
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -2200,6 +2333,8 @@ File Saved
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Save the Geom Dataset as geojson and csv form if not already</p>
@@ -2207,6 +2342,8 @@ File Saved
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -2250,6 +2387,8 @@ File Saved
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Crosswalking Boundarys:</p>
@@ -2259,6 +2398,8 @@ File Saved
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -2323,6 +2464,10 @@ SavingCrosswalk
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -2534,6 +2679,8 @@ NYZBUmMYJDWGQVJjGCQ1/wMKpFHVdp3xCwAAAABJRU5ErkJggg==
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Lets-make-a-GIF">Lets make a GIF<a class="anchor-link" href="#Lets-make-a-GIF"> </a></h1>
@@ -2548,6 +2695,8 @@ NYZBUmMYJDWGQVJjGCQ1/wMKpFHVdp3xCwAAAABJRU5ErkJggg==
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -2767,6 +2916,8 @@ NYZBUmMYJDWGQVJjGCQ1/wMKpFHVdp3xCwAAAABJRU5ErkJggg==
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Reading in the Boundary Data with a filePath. We specify the geometry on import this time.</p>
@@ -2774,6 +2925,8 @@ NYZBUmMYJDWGQVJjGCQ1/wMKpFHVdp3xCwAAAABJRU5ErkJggg==
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -3069,6 +3222,8 @@ TkSuQmCC
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Settings for the data we will pull</p>
@@ -3076,6 +3231,8 @@ TkSuQmCC
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -3117,6 +3274,10 @@ TkSuQmCC
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -3191,6 +3352,10 @@ TkSuQmCC
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -3942,6 +4107,8 @@ McE0DMNIExNMwzCMNDHBNAzDSBMTTMMwjDT5/6hj0ViAAXbqAAAAAElFTkSuQmCC
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Data was successfully merged across all years and geometry.</p>
@@ -3950,6 +4117,8 @@ McE0DMNIExNMwzCMNDHBNAzDSBMTTMMwjDT5/6hj0ViAAXbqAAAAAElFTkSuQmCC
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -4071,6 +4240,10 @@ McE0DMNIExNMwzCMNDHBNAzDSBMTTMMwjDT5/6hj0ViAAXbqAAAAAElFTkSuQmCC
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -4381,6 +4554,8 @@ dtype: object</pre>
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Optional:-Prepair-Google-Drive-Data-Folder/-Drive-Import-Operations">Optional: Prepair Google Drive Data Folder/ Drive Import Operations<a class="anchor-link" href="#Optional:-Prepair-Google-Drive-Data-Folder/-Drive-Import-Operations"> </a></h1>
@@ -4394,6 +4569,8 @@ dtype: object</pre>
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -4401,7 +4578,7 @@ dtype: object</pre>
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#https://colab.research.google.com/github/jakevdp/PythonDataScienceHandbook/blob/master/notebooks/01.05-IPython-And-Shell-Commands.ipynb</span>
 
-<span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="kn">from</span> <span class="nn">google.colab</span> <span class="k">import</span> <span class="n">drive</span>
 <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s2">&quot;/content/drive&quot;</span><span class="p">)</span>
 </pre></div>
 
@@ -4410,6 +4587,8 @@ dtype: object</pre>
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>You can also import file directly into a temporary folder in a public folder</p>
@@ -4417,13 +4596,15 @@ dtype: object</pre>
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Import Data (data.csv file)</span>
-<span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">files</span>
+<span class="kn">from</span> <span class="nn">google.colab</span> <span class="k">import</span> <span class="n">files</span>
 
 <span class="c1"># Just uncommment this line and run the cell</span>
 <span class="c1"># uploaded = files.upload()</span>
@@ -4434,6 +4615,8 @@ dtype: object</pre>
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now lets explore the file system using the built in terminal:</p>
@@ -4442,6 +4625,8 @@ dtype: object</pre>
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -4470,6 +4655,10 @@ dtype: object</pre>
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -4523,6 +4712,10 @@ dtype: object</pre>
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -4559,6 +4752,8 @@ boundaries--baltimore-tracts-NoWater-2010.geojson
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The next two function will help navigating the file directories:</p>
@@ -4571,6 +4766,8 @@ boundaries--baltimore-tracts-NoWater-2010.geojson
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -4595,6 +4792,7 @@ boundaries--baltimore-tracts-NoWater-2010.geojson
 
 </div>
     {% endraw %}
+
 </div>
  
 

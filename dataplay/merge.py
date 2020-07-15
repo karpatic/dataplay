@@ -126,10 +126,12 @@ def mergeDatasets(left_ds=False,
 
   # Returns a DF if provided a DF or URL. False otherwise.
   def retrieveDatasetFromUrl(df):
+    print('retrieveDatasetFromUrl', df)
+    urlGiven = df
     datasetExists = checkDataSetExists(df)
-    urlGiven = df and not datasetExists
     if datasetExists: return df
     elif ( urlGiven ):
+      print('retrieveDatasetFromUrl' , df)
       try:
         urlGiven = df
         df = pd.read_csv( df )
@@ -214,11 +216,13 @@ def mergeDatasets(left_ds=False,
 
 
 
-
   # Check if the columns actually exist
   def checkColumns(dataset, column): return {column}.issubset(dataset.columns)
   # Check if the DataSet actually exist
-  def checkDataSetExists(df): return isinstance(df, pd.DataFrame)
+  def checkDataSetExists(df):
+    returnthis = isinstance(df, pd.DataFrame)
+    print('checkDataSetExists', returnthis)
+    return returnthis
 
   # This function uses all the other functions
   def main(left_ds, right_ds, crosswalk_ds, use_crosswalk, left_col, right_col,

@@ -4,7 +4,10 @@ __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {"InteractiveShell.ast_node_interactivity": "01_ACS_Explore_and_Download.ipynb",
          "retrieve_acs_data": "01_ACS_Explore_and_Download.ipynb",
-         "mergeDatasets": "02_Merge_Data.ipynb"}
+         "mergeDatasets": "02_Merge_Data.ipynb",
+         "workWithGeometryData": "03_Map_Basics_Intake_and_Operations.ipynb",
+         "map_points": "03_Map_Basics_Intake_and_Operations.ipynb",
+         "readInGeometryData": "03_Map_Basics_Intake_and_Operations.ipynb"}
 
 modules = ["acsDownload.py",
            "merge.py",

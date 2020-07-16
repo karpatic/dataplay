@@ -24,7 +24,7 @@ The [Dataplay](https://karpatic.github.io/dataplay/) Handbook uses techniques co
 The code is on <a href="https://pypi.org/project/test-template/">PyPI</a> so you can just run:
 
 ```
-pip install dataplay geopandas
+pip install dataplay geopandas dexplot
 ```
 
 From the terminal to install the code and its dependencies
@@ -197,45 +197,45 @@ banksPd = mergeDatasets( left_ds=left_ds, left_col=left_col,
      Handling Left Dataset
     retrieveDatasetFromUrl                       B19001_001E_Total  \
     NAME                                      
-    Census Tract 1901     796                 
-    Census Tract 1902     695                 
-    Census Tract 2201     2208                
-    Census Tract 2303     632                 
-    Census Tract 2502.07  836                 
-    ...                   ...                 
-    Census Tract 2720.05  1219                
-    Census Tract 1202.01  883                 
-    Census Tract 2720.04  1835                
-    Census Tract 2720.06  1679                
-    Baltimore City        239791              
+    Census Tract 1901                   796   
+    Census Tract 1902                   695   
+    Census Tract 2201                  2208   
+    Census Tract 2303                   632   
+    Census Tract 2502.07                836   
+    ...                                 ...   
+    Census Tract 2720.05               1219   
+    Census Tract 1202.01                883   
+    Census Tract 2720.04               1835   
+    Census Tract 2720.06               1679   
+    Baltimore City                   239791   
     
                           B19001_002E_Total_Less_than_$10_000  \
     NAME                                                        
-    Census Tract 1901     237                                   
-    Census Tract 1902     63                                    
-    Census Tract 2201     137                                   
-    Census Tract 2303     3                                     
-    Census Tract 2502.07  102                                   
-    ...                  ..                                     
-    Census Tract 2720.05  84                                    
-    Census Tract 1202.01  78                                    
-    Census Tract 2720.04  155                                   
-    Census Tract 2720.06  347                                   
-    Baltimore City        29106                                 
+    Census Tract 1901                     237                   
+    Census Tract 1902                      63                   
+    Census Tract 2201                     137                   
+    Census Tract 2303                       3                   
+    Census Tract 2502.07                  102                   
+    ...                                   ...                   
+    Census Tract 2720.05                   84                   
+    Census Tract 1202.01                   78                   
+    Census Tract 2720.04                  155                   
+    Census Tract 2720.06                  347                   
+    Baltimore City                      29106                   
     
                           B19001_003E_Total_$10_000_to_$14_999  \
     NAME                                                         
-    Census Tract 1901     76                                     
-    Census Tract 1902     87                                     
-    Census Tract 2201     229                                    
-    Census Tract 2303     20                                     
-    Census Tract 2502.07  28                                     
-    ...                   ..                                     
-    Census Tract 2720.05  41                                     
-    Census Tract 1202.01  27                                     
-    Census Tract 2720.04  109                                    
-    Census Tract 2720.06  165                                    
-    Baltimore City        15759                                  
+    Census Tract 1901                      76                    
+    Census Tract 1902                      87                    
+    Census Tract 2201                     229                    
+    Census Tract 2303                      20                    
+    Census Tract 2502.07                   28                    
+    ...                                   ...                    
+    Census Tract 2720.05                   41                    
+    Census Tract 1202.01                   27                    
+    Census Tract 2720.04                  109                    
+    Census Tract 2720.06                  165                    
+    Baltimore City                      15759                    
     
                           ...  \
     NAME                  ...   
@@ -253,31 +253,31 @@ banksPd = mergeDatasets( left_ds=left_ds, left_col=left_col,
     
                           state  \
     NAME                          
-    Census Tract 1901     24      
-    Census Tract 1902     24      
-    Census Tract 2201     24      
-    Census Tract 2303     24      
-    Census Tract 2502.07  24      
-    ...                   ..      
-    Census Tract 2720.05  24      
-    Census Tract 1202.01  24      
-    Census Tract 2720.04  24      
-    Census Tract 2720.06  24      
-    Baltimore City        24      
+    Census Tract 1901        24   
+    Census Tract 1902        24   
+    Census Tract 2201        24   
+    Census Tract 2303        24   
+    Census Tract 2502.07     24   
+    ...                     ...   
+    Census Tract 2720.05     24   
+    Census Tract 1202.01     24   
+    Census Tract 2720.04     24   
+    Census Tract 2720.06     24   
+    Baltimore City           24   
     
                           county  \
     NAME                           
-    Census Tract 1901     510      
-    Census Tract 1902     510      
-    Census Tract 2201     510      
-    Census Tract 2303     510      
-    Census Tract 2502.07  510      
-    ...                   ...      
-    Census Tract 2720.05  510      
-    Census Tract 1202.01  510      
-    Census Tract 2720.04  510      
-    Census Tract 2720.06  510      
-    Baltimore City        510      
+    Census Tract 1901        510   
+    Census Tract 1902        510   
+    Census Tract 2201        510   
+    Census Tract 2303        510   
+    Census Tract 2502.07     510   
+    ...                      ...   
+    Census Tract 2720.05     510   
+    Census Tract 1202.01     510   
+    Census Tract 2720.04     510   
+    Census Tract 2720.06     510   
+    Baltimore City           510   
     
                            tract  
     NAME                          
@@ -291,7 +291,7 @@ banksPd = mergeDatasets( left_ds=left_ds, left_col=left_col,
     Census Tract 1202.01  120201  
     Census Tract 2720.04  272004  
     Census Tract 2720.06  272006  
-    Baltimore City        10000   
+    Baltimore City         10000  
     
     [201 rows x 20 columns]
     checkDataSetExists True
@@ -386,8 +386,165 @@ banksPd = mergeDatasets( left_ds=left_ds, left_col=left_col,
 
 
 ```
+banksPd.head()
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>B19001_001E_Total</th>
+      <th>B19001_002E_Total_Less_than_$10_000</th>
+      <th>B19001_003E_Total_$10_000_to_$14_999</th>
+      <th>...</th>
+      <th>CSA</th>
+      <th>Tract</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>796</td>
+      <td>237</td>
+      <td>76</td>
+      <td>...</td>
+      <td>Southwest Baltimore</td>
+      <td>1901.0</td>
+      <td>POLYGON ((-76.63...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>695</td>
+      <td>63</td>
+      <td>87</td>
+      <td>...</td>
+      <td>Southwest Baltimore</td>
+      <td>1902.0</td>
+      <td>POLYGON ((-76.63...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2208</td>
+      <td>137</td>
+      <td>229</td>
+      <td>...</td>
+      <td>Inner Harbor/Fed...</td>
+      <td>2201.0</td>
+      <td>MULTIPOLYGON (((...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>632</td>
+      <td>3</td>
+      <td>20</td>
+      <td>...</td>
+      <td>South Baltimore</td>
+      <td>2303.0</td>
+      <td>MULTIPOLYGON (((...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>836</td>
+      <td>102</td>
+      <td>28</td>
+      <td>...</td>
+      <td>Cherry Hill</td>
+      <td>2502.0</td>
+      <td>POLYGON ((-76.62...</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 27 columns</p>
+</div>
+
+
+
+```
+type(banksPd)
+```
+
+
+
+
+    pandas.core.frame.DataFrame
+
+
+
+```
+from dataplay.geoms import readInGeometryData
+```
+
+```
+readInGeometryData(banksPd)
+```
+
+
+    ---------------------------------------------------------------------------
+
+    ValueError                                Traceback (most recent call last)
+
+    <ipython-input-10-f7d8a9e9530d> in <module>()
+    ----> 1 readInGeometryData(banksPd)
+    
+
+    /usr/local/lib/python3.6/dist-packages/dataplay/geoms.py in readInGeometryData(url, porg, geom, lat, lng, revgeocode, save, in_crs, out_crs)
+        299     return gdf
+        300 
+    --> 301   return main(url, porg, geom, lat, lng, revgeocode, save, in_crs, out_crs)
+    
+
+    /usr/local/lib/python3.6/dist-packages/dataplay/geoms.py in main(url, porg, geom, lat, lng, revgeocode, save, in_crs, out_crs)
+        277 
+        278     # Check for missing values. retrieve them
+    --> 279     if (not (url and porg) ) or (
+        280         not (porg == 'p' or porg == 'g') ) or (
+        281         porg == 'g' and not geom) or (
+
+
+    /usr/local/lib/python3.6/dist-packages/pandas/core/generic.py in __nonzero__(self)
+       1477     def __nonzero__(self):
+       1478         raise ValueError(
+    -> 1479             f"The truth value of a {type(self).__name__} is ambiguous. "
+       1480             "Use a.empty, a.bool(), a.item(), a.any() or a.all()."
+       1481         )
+
+
+    ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+
+```
 panp = workWithGeometryData( 'pandp', foodPantryLocations[ foodPantryLocations.City_1 == 'Baltimore' ], csa_gdf, pntsClr='red', polysClr='white')
 ```
+
+
+    ---------------------------------------------------------------------------
+
+    NameError                                 Traceback (most recent call last)
+
+    <ipython-input-23-c7fbd366e628> in <module>()
+    ----> 1 panp = workWithGeometryData( 'pandp', foodPantryLocations[ foodPantryLocations.City_1 == 'Baltimore' ], csa_gdf, pntsClr='red', polysClr='white')
+    
+
+    NameError: name 'workWithGeometryData' is not defined
+
 
 ```
 # The attributes are what we will use.
@@ -402,56 +559,9 @@ banksPd[geom] = banksPd[geom].apply(lambda x: loads( str(x) ))
 banksGdf = GeoDataFrame(banksPd, crs=in_crs, geometry=geom)
 ```
 
-
-    ---------------------------------------------------------------------------
-
-    NameError                                 Traceback (most recent call last)
-
-    <ipython-input-28-0cba50cbbf5f> in <module>()
-          5 
-          6 # Convert the geometry column datatype from a string of text into a coordinate datatype
-    ----> 7 banksPd[geom] = banksPd[geom].apply(lambda x: loads( str(x) ))
-          8 
-          9 # Process the dataframe as a geodataframe with a known CRS and geom column
-
-
-    /usr/local/lib/python3.6/dist-packages/pandas/core/series.py in apply(self, func, convert_dtype, args, **kwds)
-       3846             else:
-       3847                 values = self.astype(object).values
-    -> 3848                 mapped = lib.map_infer(values, f, convert=convert_dtype)
-       3849 
-       3850         if len(mapped) and isinstance(mapped[0], Series):
-
-
-    pandas/_libs/lib.pyx in pandas._libs.lib.map_infer()
-
-
-    <ipython-input-28-0cba50cbbf5f> in <lambda>(x)
-          5 
-          6 # Convert the geometry column datatype from a string of text into a coordinate datatype
-    ----> 7 banksPd[geom] = banksPd[geom].apply(lambda x: loads( str(x) ))
-          8 
-          9 # Process the dataframe as a geodataframe with a known CRS and geom column
-
-
-    NameError: name 'loads' is not defined
-
-
 ```
 banksGdf.plot()
 ```
-
-
-    ---------------------------------------------------------------------------
-
-    NameError                                 Traceback (most recent call last)
-
-    <ipython-input-29-50418cc2b0e9> in <module>()
-    ----> 1 banksGdf.plot()
-    
-
-    NameError: name 'banksGdf' is not defined
-
 
 ## Legal
 

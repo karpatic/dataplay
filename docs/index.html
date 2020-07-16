@@ -62,7 +62,7 @@ description: "The one stop shop to learn about data intake, processing, and visu
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The code is on <a href="https://pypi.org/project/test-template/">PyPI</a> so you can just run:</p>
 
-<pre><code>pip install dataplay geopandas</code></pre>
+<pre><code>pip install dataplay geopandas dexplot</code></pre>
 
 </div>
 </div>
@@ -313,45 +313,45 @@ mergeDatasets(left_ds=False, right_ds=False, crosswalk_ds=False,  use_crosswalk 
  Handling Left Dataset
 retrieveDatasetFromUrl                       B19001_001E_Total  \
 NAME                                      
-Census Tract 1901     796                 
-Census Tract 1902     695                 
-Census Tract 2201     2208                
-Census Tract 2303     632                 
-Census Tract 2502.07  836                 
-...                   ...                 
-Census Tract 2720.05  1219                
-Census Tract 1202.01  883                 
-Census Tract 2720.04  1835                
-Census Tract 2720.06  1679                
-Baltimore City        239791              
+Census Tract 1901                   796   
+Census Tract 1902                   695   
+Census Tract 2201                  2208   
+Census Tract 2303                   632   
+Census Tract 2502.07                836   
+...                                 ...   
+Census Tract 2720.05               1219   
+Census Tract 1202.01                883   
+Census Tract 2720.04               1835   
+Census Tract 2720.06               1679   
+Baltimore City                   239791   
 
                       B19001_002E_Total_Less_than_$10_000  \
 NAME                                                        
-Census Tract 1901     237                                   
-Census Tract 1902     63                                    
-Census Tract 2201     137                                   
-Census Tract 2303     3                                     
-Census Tract 2502.07  102                                   
-...                  ..                                     
-Census Tract 2720.05  84                                    
-Census Tract 1202.01  78                                    
-Census Tract 2720.04  155                                   
-Census Tract 2720.06  347                                   
-Baltimore City        29106                                 
+Census Tract 1901                     237                   
+Census Tract 1902                      63                   
+Census Tract 2201                     137                   
+Census Tract 2303                       3                   
+Census Tract 2502.07                  102                   
+...                                   ...                   
+Census Tract 2720.05                   84                   
+Census Tract 1202.01                   78                   
+Census Tract 2720.04                  155                   
+Census Tract 2720.06                  347                   
+Baltimore City                      29106                   
 
                       B19001_003E_Total_$10_000_to_$14_999  \
 NAME                                                         
-Census Tract 1901     76                                     
-Census Tract 1902     87                                     
-Census Tract 2201     229                                    
-Census Tract 2303     20                                     
-Census Tract 2502.07  28                                     
-...                   ..                                     
-Census Tract 2720.05  41                                     
-Census Tract 1202.01  27                                     
-Census Tract 2720.04  109                                    
-Census Tract 2720.06  165                                    
-Baltimore City        15759                                  
+Census Tract 1901                      76                    
+Census Tract 1902                      87                    
+Census Tract 2201                     229                    
+Census Tract 2303                      20                    
+Census Tract 2502.07                   28                    
+...                                   ...                    
+Census Tract 2720.05                   41                    
+Census Tract 1202.01                   27                    
+Census Tract 2720.04                  109                    
+Census Tract 2720.06                  165                    
+Baltimore City                      15759                    
 
                       ...  \
 NAME                  ...   
@@ -369,31 +369,31 @@ Baltimore City        ...
 
                       state  \
 NAME                          
-Census Tract 1901     24      
-Census Tract 1902     24      
-Census Tract 2201     24      
-Census Tract 2303     24      
-Census Tract 2502.07  24      
-...                   ..      
-Census Tract 2720.05  24      
-Census Tract 1202.01  24      
-Census Tract 2720.04  24      
-Census Tract 2720.06  24      
-Baltimore City        24      
+Census Tract 1901        24   
+Census Tract 1902        24   
+Census Tract 2201        24   
+Census Tract 2303        24   
+Census Tract 2502.07     24   
+...                     ...   
+Census Tract 2720.05     24   
+Census Tract 1202.01     24   
+Census Tract 2720.04     24   
+Census Tract 2720.06     24   
+Baltimore City           24   
 
                       county  \
 NAME                           
-Census Tract 1901     510      
-Census Tract 1902     510      
-Census Tract 2201     510      
-Census Tract 2303     510      
-Census Tract 2502.07  510      
-...                   ...      
-Census Tract 2720.05  510      
-Census Tract 1202.01  510      
-Census Tract 2720.04  510      
-Census Tract 2720.06  510      
-Baltimore City        510      
+Census Tract 1901        510   
+Census Tract 1902        510   
+Census Tract 2201        510   
+Census Tract 2303        510   
+Census Tract 2502.07     510   
+...                      ...   
+Census Tract 2720.05     510   
+Census Tract 1202.01     510   
+Census Tract 2720.04     510   
+Census Tract 2720.06     510   
+Baltimore City           510   
 
                        tract  
 NAME                          
@@ -407,7 +407,7 @@ Census Tract 2720.05  272005
 Census Tract 1202.01  120201  
 Census Tract 2720.04  272004  
 Census Tract 2720.06  272006  
-Baltimore City        10000   
+Baltimore City         10000  
 
 [201 rows x 20 columns]
 checkDataSetExists True
@@ -521,10 +521,264 @@ left_col GEOID2010 right_col GEOID10 how outer
 
 <div class="inner_cell">
     <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">banksPd</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>B19001_001E_Total</th>
+      <th>B19001_002E_Total_Less_than_$10_000</th>
+      <th>B19001_003E_Total_$10_000_to_$14_999</th>
+      <th>...</th>
+      <th>CSA</th>
+      <th>Tract</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>796</td>
+      <td>237</td>
+      <td>76</td>
+      <td>...</td>
+      <td>Southwest Baltimore</td>
+      <td>1901.0</td>
+      <td>POLYGON ((-76.63...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>695</td>
+      <td>63</td>
+      <td>87</td>
+      <td>...</td>
+      <td>Southwest Baltimore</td>
+      <td>1902.0</td>
+      <td>POLYGON ((-76.63...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2208</td>
+      <td>137</td>
+      <td>229</td>
+      <td>...</td>
+      <td>Inner Harbor/Fed...</td>
+      <td>2201.0</td>
+      <td>MULTIPOLYGON (((...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>632</td>
+      <td>3</td>
+      <td>20</td>
+      <td>...</td>
+      <td>South Baltimore</td>
+      <td>2303.0</td>
+      <td>MULTIPOLYGON (((...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>836</td>
+      <td>102</td>
+      <td>28</td>
+      <td>...</td>
+      <td>Cherry Hill</td>
+      <td>2502.0</td>
+      <td>POLYGON ((-76.62...</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 27 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">banksPd</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>pandas.core.frame.DataFrame</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">dataplay.geoms</span> <span class="kn">import</span> <span class="n">readInGeometryData</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/usr/local/lib/python3.6/dist-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use &#34;pip install psycopg2-binary&#34; instead. For details see: &lt;http://initd.org/psycopg/docs/install.html#binary-install-from-pypi&gt;.
+  &#34;&#34;&#34;)
+/content/drive/My Drive/dataplay/dataplay/acsDownload.py:27: FutureWarning: Passing a negative integer is deprecated in version 1.0 and will not be supported in future version. Instead, use None to not limit the column width.
+  pd.set_option(&#39;display.max_colwidth&#39;, -1)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">readInGeometryData</span><span class="p">(</span><span class="n">banksPd</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-10-f7d8a9e9530d&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>readInGeometryData<span class="ansi-blue-fg">(</span>banksPd<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.6/dist-packages/dataplay/geoms.py</span> in <span class="ansi-cyan-fg">readInGeometryData</span><span class="ansi-blue-fg">(url, porg, geom, lat, lng, revgeocode, save, in_crs, out_crs)</span>
+<span class="ansi-green-intense-fg ansi-bold">    299</span>     <span class="ansi-green-fg">return</span> gdf
+<span class="ansi-green-intense-fg ansi-bold">    300</span> 
+<span class="ansi-green-fg">--&gt; 301</span><span class="ansi-red-fg">   </span><span class="ansi-green-fg">return</span> main<span class="ansi-blue-fg">(</span>url<span class="ansi-blue-fg">,</span> porg<span class="ansi-blue-fg">,</span> geom<span class="ansi-blue-fg">,</span> lat<span class="ansi-blue-fg">,</span> lng<span class="ansi-blue-fg">,</span> revgeocode<span class="ansi-blue-fg">,</span> save<span class="ansi-blue-fg">,</span> in_crs<span class="ansi-blue-fg">,</span> out_crs<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.6/dist-packages/dataplay/geoms.py</span> in <span class="ansi-cyan-fg">main</span><span class="ansi-blue-fg">(url, porg, geom, lat, lng, revgeocode, save, in_crs, out_crs)</span>
+<span class="ansi-green-intense-fg ansi-bold">    277</span> 
+<span class="ansi-green-intense-fg ansi-bold">    278</span>     <span class="ansi-red-fg"># Check for missing values. retrieve them</span>
+<span class="ansi-green-fg">--&gt; 279</span><span class="ansi-red-fg">     if (not (url and porg) ) or (
+</span><span class="ansi-green-intense-fg ansi-bold">    280</span>         <span class="ansi-green-fg">not</span> <span class="ansi-blue-fg">(</span>porg <span class="ansi-blue-fg">==</span> <span class="ansi-blue-fg">&#39;p&#39;</span> <span class="ansi-green-fg">or</span> porg <span class="ansi-blue-fg">==</span> <span class="ansi-blue-fg">&#39;g&#39;</span><span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">or</span> <span class="ansi-blue-fg">(</span>
+<span class="ansi-green-intense-fg ansi-bold">    281</span>         porg <span class="ansi-blue-fg">==</span> <span class="ansi-blue-fg">&#39;g&#39;</span> <span class="ansi-green-fg">and</span> <span class="ansi-green-fg">not</span> geom<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">or</span> <span class="ansi-blue-fg">(</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.6/dist-packages/pandas/core/generic.py</span> in <span class="ansi-cyan-fg">__nonzero__</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1477</span>     <span class="ansi-green-fg">def</span> __nonzero__<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">   1478</span>         raise ValueError(
+<span class="ansi-green-fg">-&gt; 1479</span><span class="ansi-red-fg">             </span><span class="ansi-blue-fg">f&#34;The truth value of a {type(self).__name__} is ambiguous. &#34;</span>
+<span class="ansi-green-intense-fg ansi-bold">   1480</span>             <span class="ansi-blue-fg">&#34;Use a.empty, a.bool(), a.item(), a.any() or a.all().&#34;</span>
+<span class="ansi-green-intense-fg ansi-bold">   1481</span>         )
+
+<span class="ansi-red-fg">ValueError</span>: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">panp</span> <span class="o">=</span> <span class="n">workWithGeometryData</span><span class="p">(</span> <span class="s1">&#39;pandp&#39;</span><span class="p">,</span> <span class="n">foodPantryLocations</span><span class="p">[</span> <span class="n">foodPantryLocations</span><span class="o">.</span><span class="n">City_1</span> <span class="o">==</span> <span class="s1">&#39;Baltimore&#39;</span> <span class="p">],</span> <span class="n">csa_gdf</span><span class="p">,</span> <span class="n">pntsClr</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">polysClr</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-23-c7fbd366e628&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>panp <span class="ansi-blue-fg">=</span> workWithGeometryData<span class="ansi-blue-fg">(</span> <span class="ansi-blue-fg">&#39;pandp&#39;</span><span class="ansi-blue-fg">,</span> foodPantryLocations<span class="ansi-blue-fg">[</span> foodPantryLocations<span class="ansi-blue-fg">.</span>City_1 <span class="ansi-blue-fg">==</span> <span class="ansi-blue-fg">&#39;Baltimore&#39;</span> <span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span> csa_gdf<span class="ansi-blue-fg">,</span> pntsClr<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;red&#39;</span><span class="ansi-blue-fg">,</span> polysClr<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;white&#39;</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;workWithGeometryData&#39; is not defined</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -554,45 +808,6 @@ left_col GEOID2010 right_col GEOID10 how outer
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-28-0cba50cbbf5f&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span> 
-<span class="ansi-green-intense-fg ansi-bold">      6</span> <span class="ansi-red-fg"># Convert the geometry column datatype from a string of text into a coordinate datatype</span>
-<span class="ansi-green-fg">----&gt; 7</span><span class="ansi-red-fg"> </span>banksPd<span class="ansi-blue-fg">[</span>geom<span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> banksPd<span class="ansi-blue-fg">[</span>geom<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">.</span>apply<span class="ansi-blue-fg">(</span><span class="ansi-green-fg">lambda</span> x<span class="ansi-blue-fg">:</span> loads<span class="ansi-blue-fg">(</span> str<span class="ansi-blue-fg">(</span>x<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      8</span> 
-<span class="ansi-green-intense-fg ansi-bold">      9</span> <span class="ansi-red-fg"># Process the dataframe as a geodataframe with a known CRS and geom column</span>
-
-<span class="ansi-green-fg">/usr/local/lib/python3.6/dist-packages/pandas/core/series.py</span> in <span class="ansi-cyan-fg">apply</span><span class="ansi-blue-fg">(self, func, convert_dtype, args, **kwds)</span>
-<span class="ansi-green-intense-fg ansi-bold">   3846</span>             <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">   3847</span>                 values <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>astype<span class="ansi-blue-fg">(</span>object<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>values
-<span class="ansi-green-fg">-&gt; 3848</span><span class="ansi-red-fg">                 </span>mapped <span class="ansi-blue-fg">=</span> lib<span class="ansi-blue-fg">.</span>map_infer<span class="ansi-blue-fg">(</span>values<span class="ansi-blue-fg">,</span> f<span class="ansi-blue-fg">,</span> convert<span class="ansi-blue-fg">=</span>convert_dtype<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   3849</span> 
-<span class="ansi-green-intense-fg ansi-bold">   3850</span>         <span class="ansi-green-fg">if</span> len<span class="ansi-blue-fg">(</span>mapped<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">and</span> isinstance<span class="ansi-blue-fg">(</span>mapped<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span> Series<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">pandas/_libs/lib.pyx</span> in <span class="ansi-cyan-fg">pandas._libs.lib.map_infer</span><span class="ansi-blue-fg">()</span>
-
-<span class="ansi-green-fg">&lt;ipython-input-28-0cba50cbbf5f&gt;</span> in <span class="ansi-cyan-fg">&lt;lambda&gt;</span><span class="ansi-blue-fg">(x)</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span> 
-<span class="ansi-green-intense-fg ansi-bold">      6</span> <span class="ansi-red-fg"># Convert the geometry column datatype from a string of text into a coordinate datatype</span>
-<span class="ansi-green-fg">----&gt; 7</span><span class="ansi-red-fg"> </span>banksPd<span class="ansi-blue-fg">[</span>geom<span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> banksPd<span class="ansi-blue-fg">[</span>geom<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">.</span>apply<span class="ansi-blue-fg">(</span><span class="ansi-green-fg">lambda</span> x<span class="ansi-blue-fg">:</span> loads<span class="ansi-blue-fg">(</span> str<span class="ansi-blue-fg">(</span>x<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      8</span> 
-<span class="ansi-green-intense-fg ansi-bold">      9</span> <span class="ansi-red-fg"># Process the dataframe as a geodataframe with a known CRS and geom column</span>
-
-<span class="ansi-red-fg">NameError</span>: name &#39;loads&#39; is not defined</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     {% endraw %}
 
@@ -607,25 +822,6 @@ left_col GEOID2010 right_col GEOID10 how outer
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-29-50418cc2b0e9&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>banksGdf<span class="ansi-blue-fg">.</span>plot<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">NameError</span>: name &#39;banksGdf&#39; is not defined</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -661,4 +857,8 @@ this site contains copyrighted material the use of which has not always been spe
 </div>
 </div>
  
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"0b633ef13ede42538a32a15a8ebfbf7e": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "initial"}}, "45be8985c99649b396ca4f8eb466df9b": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "48e27915b44a49c7ba518f3488c1fe1c": {"model_name": "DropdownModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DropdownModel", "_options_labels": ["Qualitative", "Sequential", "Diverging", "Cyclic", "Misc", "All Colormaps"], "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "DropdownView", "description": "Colormap Category: ", "description_tooltip": null, "disabled": false, "index": null, "layout": "IPY_MODEL_45be8985c99649b396ca4f8eb466df9b", "style": "IPY_MODEL_0b633ef13ede42538a32a15a8ebfbf7e"}}}, "version_major": 2, "version_minor": 0}
+</script>
 

@@ -275,8 +275,17 @@ def readInGeometryData(url=False, porg=False, geom=False, lat=False, lng=False, 
   # This function uses all the other functions
   def main(url, porg, geom, lat, lng, revgeocode, save, in_crs, out_crs):
 
+
     # Check for missing values. retrieve them
-    if (not (url and porg) ) or (
+    if (not isinstance(url, pd.DataFrame) or not (url and porg) ) or (
+        not (porg == 'p' or porg == 'g') ) or (
+        porg == 'g' and not geom) or (
+        porg == 'p' and (not (lat and lng) ) ):
+      return readInGeometryData( *getGeoParams(url, porg, geom, lat, lng, revgeocode, save, in_crs, out_crs) );
+
+
+    # Check for missing values. retrieve them
+    if (not (not isinstance(url, pd.DataFrame) and url and porg) ) or (
         not (porg == 'p' or porg == 'g') ) or (
         porg == 'g' and not geom) or (
         porg == 'p' and (not (lat and lng) ) ):

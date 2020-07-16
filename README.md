@@ -493,58 +493,16 @@ from dataplay.geoms import readInGeometryData
 ```
 
 ```
-readInGeometryData(banksPd)
+readInGeometryData(url=banksPd, porg='g', geom='geometry', lat=False, lng=False, revgeocode=False, save=False, in_crs=4326, out_crs=False)
 ```
 
-
-    ---------------------------------------------------------------------------
-
-    ValueError                                Traceback (most recent call last)
-
-    <ipython-input-10-f7d8a9e9530d> in <module>()
-    ----> 1 readInGeometryData(banksPd)
-    
-
-    /usr/local/lib/python3.6/dist-packages/dataplay/geoms.py in readInGeometryData(url, porg, geom, lat, lng, revgeocode, save, in_crs, out_crs)
-        299     return gdf
-        300 
-    --> 301   return main(url, porg, geom, lat, lng, revgeocode, save, in_crs, out_crs)
-    
-
-    /usr/local/lib/python3.6/dist-packages/dataplay/geoms.py in main(url, porg, geom, lat, lng, revgeocode, save, in_crs, out_crs)
-        277 
-        278     # Check for missing values. retrieve them
-    --> 279     if (not (url and porg) ) or (
-        280         not (porg == 'p' or porg == 'g') ) or (
-        281         porg == 'g' and not geom) or (
-
-
-    /usr/local/lib/python3.6/dist-packages/pandas/core/generic.py in __nonzero__(self)
-       1477     def __nonzero__(self):
-       1478         raise ValueError(
-    -> 1479             f"The truth value of a {type(self).__name__} is ambiguous. "
-       1480             "Use a.empty, a.bool(), a.item(), a.any() or a.all()."
-       1481         )
-
-
-    ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
-
+```
+readInGeometryData(banksPd)
+```
 
 ```
 panp = workWithGeometryData( 'pandp', foodPantryLocations[ foodPantryLocations.City_1 == 'Baltimore' ], csa_gdf, pntsClr='red', polysClr='white')
 ```
-
-
-    ---------------------------------------------------------------------------
-
-    NameError                                 Traceback (most recent call last)
-
-    <ipython-input-23-c7fbd366e628> in <module>()
-    ----> 1 panp = workWithGeometryData( 'pandp', foodPantryLocations[ foodPantryLocations.City_1 == 'Baltimore' ], csa_gdf, pntsClr='red', polysClr='white')
-    
-
-    NameError: name 'workWithGeometryData' is not defined
-
 
 ```
 # The attributes are what we will use.

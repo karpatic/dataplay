@@ -701,48 +701,27 @@ left_col GEOID2010 right_col GEOID10 how outer
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">readInGeometryData</span><span class="p">(</span><span class="n">banksPd</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">readInGeometryData</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">banksPd</span><span class="p">,</span> <span class="n">porg</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">geom</span><span class="o">=</span><span class="s1">&#39;geometry&#39;</span><span class="p">,</span> <span class="n">lat</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">lng</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">revgeocode</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">save</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">in_crs</span><span class="o">=</span><span class="mi">4326</span><span class="p">,</span> <span class="n">out_crs</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-10-f7d8a9e9530d&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>readInGeometryData<span class="ansi-blue-fg">(</span>banksPd<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">/usr/local/lib/python3.6/dist-packages/dataplay/geoms.py</span> in <span class="ansi-cyan-fg">readInGeometryData</span><span class="ansi-blue-fg">(url, porg, geom, lat, lng, revgeocode, save, in_crs, out_crs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    299</span>     <span class="ansi-green-fg">return</span> gdf
-<span class="ansi-green-intense-fg ansi-bold">    300</span> 
-<span class="ansi-green-fg">--&gt; 301</span><span class="ansi-red-fg">   </span><span class="ansi-green-fg">return</span> main<span class="ansi-blue-fg">(</span>url<span class="ansi-blue-fg">,</span> porg<span class="ansi-blue-fg">,</span> geom<span class="ansi-blue-fg">,</span> lat<span class="ansi-blue-fg">,</span> lng<span class="ansi-blue-fg">,</span> revgeocode<span class="ansi-blue-fg">,</span> save<span class="ansi-blue-fg">,</span> in_crs<span class="ansi-blue-fg">,</span> out_crs<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">/usr/local/lib/python3.6/dist-packages/dataplay/geoms.py</span> in <span class="ansi-cyan-fg">main</span><span class="ansi-blue-fg">(url, porg, geom, lat, lng, revgeocode, save, in_crs, out_crs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    277</span> 
-<span class="ansi-green-intense-fg ansi-bold">    278</span>     <span class="ansi-red-fg"># Check for missing values. retrieve them</span>
-<span class="ansi-green-fg">--&gt; 279</span><span class="ansi-red-fg">     if (not (url and porg) ) or (
-</span><span class="ansi-green-intense-fg ansi-bold">    280</span>         <span class="ansi-green-fg">not</span> <span class="ansi-blue-fg">(</span>porg <span class="ansi-blue-fg">==</span> <span class="ansi-blue-fg">&#39;p&#39;</span> <span class="ansi-green-fg">or</span> porg <span class="ansi-blue-fg">==</span> <span class="ansi-blue-fg">&#39;g&#39;</span><span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">or</span> <span class="ansi-blue-fg">(</span>
-<span class="ansi-green-intense-fg ansi-bold">    281</span>         porg <span class="ansi-blue-fg">==</span> <span class="ansi-blue-fg">&#39;g&#39;</span> <span class="ansi-green-fg">and</span> <span class="ansi-green-fg">not</span> geom<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">or</span> <span class="ansi-blue-fg">(</span>
-
-<span class="ansi-green-fg">/usr/local/lib/python3.6/dist-packages/pandas/core/generic.py</span> in <span class="ansi-cyan-fg">__nonzero__</span><span class="ansi-blue-fg">(self)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1477</span>     <span class="ansi-green-fg">def</span> __nonzero__<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">   1478</span>         raise ValueError(
-<span class="ansi-green-fg">-&gt; 1479</span><span class="ansi-red-fg">             </span><span class="ansi-blue-fg">f&#34;The truth value of a {type(self).__name__} is ambiguous. &#34;</span>
-<span class="ansi-green-intense-fg ansi-bold">   1480</span>             <span class="ansi-blue-fg">&#34;Use a.empty, a.bool(), a.item(), a.any() or a.all().&#34;</span>
-<span class="ansi-green-intense-fg ansi-bold">   1481</span>         )
-
-<span class="ansi-red-fg">ValueError</span>: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().</pre>
 </div>
-</div>
+    {% endraw %}
 
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">readInGeometryData</span><span class="p">(</span><span class="n">banksPd</span><span class="p">)</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 
@@ -760,25 +739,6 @@ left_col GEOID2010 right_col GEOID10 how outer
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-23-c7fbd366e628&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>panp <span class="ansi-blue-fg">=</span> workWithGeometryData<span class="ansi-blue-fg">(</span> <span class="ansi-blue-fg">&#39;pandp&#39;</span><span class="ansi-blue-fg">,</span> foodPantryLocations<span class="ansi-blue-fg">[</span> foodPantryLocations<span class="ansi-blue-fg">.</span>City_1 <span class="ansi-blue-fg">==</span> <span class="ansi-blue-fg">&#39;Baltimore&#39;</span> <span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span> csa_gdf<span class="ansi-blue-fg">,</span> pntsClr<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;red&#39;</span><span class="ansi-blue-fg">,</span> polysClr<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;white&#39;</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">NameError</span>: name &#39;workWithGeometryData&#39; is not defined</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -859,6 +819,6 @@ this site contains copyrighted material the use of which has not always been spe
  
 
 <script type="application/vnd.jupyter.widget-state+json">
-{"state": {"0b633ef13ede42538a32a15a8ebfbf7e": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "initial"}}, "45be8985c99649b396ca4f8eb466df9b": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "48e27915b44a49c7ba518f3488c1fe1c": {"model_name": "DropdownModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DropdownModel", "_options_labels": ["Qualitative", "Sequential", "Diverging", "Cyclic", "Misc", "All Colormaps"], "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "DropdownView", "description": "Colormap Category: ", "description_tooltip": null, "disabled": false, "index": null, "layout": "IPY_MODEL_45be8985c99649b396ca4f8eb466df9b", "style": "IPY_MODEL_0b633ef13ede42538a32a15a8ebfbf7e"}}}, "version_major": 2, "version_minor": 0}
+{"state": {"70807ed893244661ae7c239635d3fcb7": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "initial"}}, "689a4beb441d45a79e9f8ea9ce3e6f9f": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "f7faecfe06474a1eb65a32aefe741e4f": {"model_name": "DropdownModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DropdownModel", "_options_labels": ["Qualitative", "Sequential", "Diverging", "Cyclic", "Misc", "All Colormaps"], "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "DropdownView", "description": "Colormap Category: ", "description_tooltip": null, "disabled": false, "index": null, "layout": "IPY_MODEL_689a4beb441d45a79e9f8ea9ce3e6f9f", "style": "IPY_MODEL_70807ed893244661ae7c239635d3fcb7"}}}, "version_major": 2, "version_minor": 0}
 </script>
 

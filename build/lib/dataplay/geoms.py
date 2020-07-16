@@ -213,9 +213,9 @@ def readInGeometryData(url=False, porg=False, geom=False, lat=False, lng=False, 
 
   def readFile(url, geom, lat, lng, revgeocode, in_crs, out_crs):
     df = False
+    gdf = False
     ext = 1
-    returnthis = isinstance(url, pd.DataFrame)
-    if returnthis: ext=csv
+    if isinstance(url, pd.DataFrame): ext='csv'
     else: ext = url[-3:]
 
     #XLS
@@ -223,9 +223,8 @@ def readInGeometryData(url=False, porg=False, geom=False, lat=False, lng=False, 
 
     # The file extension is used to determine the appropriate import method.
     if ext in ['son', 'kml', 'shp']: gdf = gpd.read_file(url)
-
     if ext == 'csv':
-      df = pd.read_csv(url)
+      df = url if isinstance(url, pd.DataFrame) else pd.read_csv(url)
       print( df.columns)
       # Read using Geom, Lat, Lat/Lng, revGeoCode
       if revgeocode=='y': df['geometry'] = reverseGeoCode(df, lat)
@@ -275,21 +274,15 @@ def readInGeometryData(url=False, porg=False, geom=False, lat=False, lng=False, 
   # This function uses all the other functions
   def main(url, porg, geom, lat, lng, revgeocode, save, in_crs, out_crs):
 
-
     # Check for missing values. retrieve them
-    if (not isinstance(url, pd.DataFrame) or not (url and porg) ) or (
+    if (isinstance(url, pd.DataFrame)): print('isGeoDataframe')
+    elif (not (url and porg) ) or (
         not (porg == 'p' or porg == 'g') ) or (
         porg == 'g' and not geom) or (
         porg == 'p' and (not (lat and lng) ) ):
       return readInGeometryData( *getGeoParams(url, porg, geom, lat, lng, revgeocode, save, in_crs, out_crs) );
 
 
-    # Check for missing values. retrieve them
-    if (not (not isinstance(url, pd.DataFrame) and url and porg) ) or (
-        not (porg == 'p' or porg == 'g') ) or (
-        porg == 'g' and not geom) or (
-        porg == 'p' and (not (lat and lng) ) ):
-      return readInGeometryData( *getGeoParams(url, porg, geom, lat, lng, revgeocode, save, in_crs, out_crs) );
 
     print(f"RECIEVED url: {url}, \n porg: {porg}, \n geom: {geom}, \n lat: {lat}, \n lng: {lng}, \n revgeocode: {revgeocode}, \n in_crs: {in_crs}, \n out_crs: {out_crs}")
 

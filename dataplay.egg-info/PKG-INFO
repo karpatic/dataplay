@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: dataplay
-Version: 0.0.11
+Version: 0.0.12
 Summary: Code Tutorials
 Home-page: https://github.com/karpatic/dataplay
 Author: Charles Karpati
@@ -504,84 +504,9 @@ Description: # Data Handling Guidebook
         readInGeometryData(url=banksPd, porg='g', geom='geometry', lat=False, lng=False, revgeocode=False, save=False, in_crs=4326, out_crs=False)
         ```
         
-        
-            ---------------------------------------------------------------------------
-        
-            RecursionError                            Traceback (most recent call last)
-        
-            <ipython-input-11-758d9cebab16> in <module>()
-            ----> 1 readInGeometryData(url=banksPd, porg='g', geom='geometry', lat=False, lng=False, revgeocode=False, save=False, in_crs=4326, out_crs=False)
-            
-        
-            /usr/local/lib/python3.6/dist-packages/dataplay/geoms.py in readInGeometryData(url, porg, geom, lat, lng, revgeocode, save, in_crs, out_crs)
-                299     return gdf
-                300 
-            --> 301   return main(url, porg, geom, lat, lng, revgeocode, save, in_crs, out_crs)
-            
-        
-            /usr/local/lib/python3.6/dist-packages/dataplay/geoms.py in main(url, porg, geom, lat, lng, revgeocode, save, in_crs, out_crs)
-                281         porg == 'g' and not geom) or (
-                282         porg == 'p' and (not (lat and lng) ) ):
-            --> 283       return readInGeometryData( *getGeoParams(url, porg, geom, lat, lng, revgeocode, save, in_crs, out_crs) );
-                284 
-                285     print(f"RECIEVED url: {url}, \n porg: {porg}, \n geom: {geom}, \n lat: {lat}, \n lng: {lng}, \n revgeocode: {revgeocode}, \n in_crs: {in_crs}, \n out_crs: {out_crs}")
-        
-        
-            ... last 2 frames repeated, from the frame below ...
-        
-        
-            /usr/local/lib/python3.6/dist-packages/dataplay/geoms.py in readInGeometryData(url, porg, geom, lat, lng, revgeocode, save, in_crs, out_crs)
-                299     return gdf
-                300 
-            --> 301   return main(url, porg, geom, lat, lng, revgeocode, save, in_crs, out_crs)
-            
-        
-            RecursionError: maximum recursion depth exceeded
-        
-        
         ```
         readInGeometryData(banksPd)
         ```
-        
-            Do your records need reverse geocoding: (Enter: y/n') n
-            Do the records in this dataset use (P)oints or (g)eometric polygons?: (Enter: 'p' or 'g') g
-            Please enter column name where the geometry data is stored: (*optional, skip if unkown)geometry
-        
-        
-        
-            ---------------------------------------------------------------------------
-        
-            RecursionError                            Traceback (most recent call last)
-        
-            <ipython-input-10-f7d8a9e9530d> in <module>()
-            ----> 1 readInGeometryData(banksPd)
-            
-        
-            /usr/local/lib/python3.6/dist-packages/dataplay/geoms.py in readInGeometryData(url, porg, geom, lat, lng, revgeocode, save, in_crs, out_crs)
-                299     return gdf
-                300 
-            --> 301   return main(url, porg, geom, lat, lng, revgeocode, save, in_crs, out_crs)
-            
-        
-            /usr/local/lib/python3.6/dist-packages/dataplay/geoms.py in main(url, porg, geom, lat, lng, revgeocode, save, in_crs, out_crs)
-                281         porg == 'g' and not geom) or (
-                282         porg == 'p' and (not (lat and lng) ) ):
-            --> 283       return readInGeometryData( *getGeoParams(url, porg, geom, lat, lng, revgeocode, save, in_crs, out_crs) );
-                284 
-                285     print(f"RECIEVED url: {url}, \n porg: {porg}, \n geom: {geom}, \n lat: {lat}, \n lng: {lng}, \n revgeocode: {revgeocode}, \n in_crs: {in_crs}, \n out_crs: {out_crs}")
-        
-        
-            ... last 2 frames repeated, from the frame below ...
-        
-        
-            /usr/local/lib/python3.6/dist-packages/dataplay/geoms.py in readInGeometryData(url, porg, geom, lat, lng, revgeocode, save, in_crs, out_crs)
-                299     return gdf
-                300 
-            --> 301   return main(url, porg, geom, lat, lng, revgeocode, save, in_crs, out_crs)
-            
-        
-            RecursionError: maximum recursion depth exceeded
-        
         
         ```
         panp = workWithGeometryData( 'pandp', foodPantryLocations[ foodPantryLocations.City_1 == 'Baltimore' ], csa_gdf, pntsClr='red', polysClr='white')

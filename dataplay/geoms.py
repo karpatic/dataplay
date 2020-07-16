@@ -213,7 +213,10 @@ def readInGeometryData(url=False, porg=False, geom=False, lat=False, lng=False, 
 
   def readFile(url, geom, lat, lng, revgeocode, in_crs, out_crs):
     df = False
-    ext = url[-3:]
+    ext = 1
+    returnthis = isinstance(url, pd.DataFrame)
+    if returnthis: ext=csv
+    else: ext = url[-3:]
 
     #XLS
     # b16 = pd.read_excel('Jones.BirthsbyCensus2016.XLS', sheetname='Births')
